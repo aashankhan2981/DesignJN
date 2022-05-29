@@ -28,6 +28,10 @@ module.exports = {
         site_black: '#1B1B1B',
         light_text: '#808080',
       },
+      boxShadow:{
+        stepShadow: '-4px -4px 10px rgba(58, 58, 58, 0.7)',
+        Shadow2: '4px 4px 10px rgba(0, 0, 0, 0.7)',
+      }
     },
   },
   plugins: [],

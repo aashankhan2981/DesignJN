@@ -1,0 +1,24 @@
+{
+    "data" : [
+        {
+            "heading":"No of users",
+            "count":"100+",
+            "icon":"union"
+        },
+       {
+            "heading":"Requirements posted",
+            "count":"1500+",
+            "icon":"requirement"
+        },
+        {
+            "heading":"Money saved",
+            "count":"₹15k+",
+            "icon":"money"
+        },{
+            "heading":"Deals Done",
+            "count":"25k+",
+            "icon":"shakehand"
+        }
+    ]
+
+}

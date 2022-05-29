@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import dots from '../public/assets/images/landing/dots.svg'
+import dots from '../../public/assets/images/landing/dots.svg'
 
 const Hero = () => {
   return (
@@ -8,9 +8,9 @@ const Hero = () => {
         <div className='absolute sm:flex hidden  mx-4 top-3 lg:top-6 xl:top-11 2xl:top-28  left-[40%]'>
      <Image src={dots} alt="dots"  />
         </div>
-        <div className='flex lg:flex-row relative flex-col-reverse items-center  gap-2 justify-center w-full'>
+        <div className='flex lg:flex-row relative flex-col-reverse items-center gap-4 xl:gap-5 justify-center w-full'>
             <img src="/assets/images/landing/background_lines.svg" className='absolute top-[25%]  z-0' alt="lines" />
-            <div className='relative px-6  lg:px-14 z-10'>
+            <div className='relative pl-6  lg:pl-14 z-10'>
 
                 <h1 className='font-bold max-w-[625px] text-white lg:block hidden lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-[65px] lg:leading-[40px] xl:leading-[55px] 2xl:leading-[70px]'><span className='text-site_yellow'>Deals</span> Aisi Aisi,<br/>ki Dil <span className='text-site_yellow'>Garden<br/> Garden</span> ho Jaaye... </h1>
                 <h1 className='font-bold max-w-[625px] text-3xl md:text-4xl leading-10 text-center text-white block lg:hidden '><span className='text-site_yellow'>Deals</span> Aisi Aisi, ki Dil <span className='text-site_yellow'>Garden Garden</span> ho Jaaye... </h1>
@@ -25,7 +25,7 @@ const Hero = () => {
                </div>
             </div>
 
-        <img src='/assets/images/landing/boywithsofa.svg' alt='boy pic' className= 'px-6  relative z-10 max-h-[500px] xl:max-h-[600px] 2xl:max-h-[696px]  3xl:max-h-[796px]'  />
+        <img src='/assets/images/landing/boywithsofa.svg' alt='boy pic' className= 'pr-6  relative z-10 max-h-[500px] xl:max-h-[600px] 2xl:max-h-[696px]  3xl:max-h-[796px]'  />
 
         </div>
         
