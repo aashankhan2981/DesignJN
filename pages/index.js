@@ -91,7 +91,7 @@ export default function Home() {
 
 
 <img src="/assets/images/landing/circle.svg"  className="absolute md:flex hidden top-[-4%] left-0 xl:left-[2%] 2xl:left-[8%] 3xl:left-[10%]" alt="" />
-         <div className="mt-[70px] w-full place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-[1260px] gap-[44px]">
+         <div className="mt-[40px] xl:mt-[70px] w-full place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-[1260px] gap-[44px]">
 {
   whyData.map(({heading,icon,content})=>{
 
