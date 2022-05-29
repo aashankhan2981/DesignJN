@@ -136,7 +136,7 @@ export default function Home() {
           <div className="flex items-center gap-4 md:gap-6">
             <div className="rounded-xl shadow-stepShadow">
 
-              <button className={`px-4 md:px-7 text-base md:text-lg  md:leading-7 font-medium shadow-Shadow2 py-[9px] md:py-4 ${true ? 'border border-[#745FEA] text-[#745FEA]' : 'text-white'} rounded-xl `}>Featured</button>
+              <button className={` px-4 md:px-7 text-base md:text-lg  md:leading-7 font-medium shadow-Shadow2 py-[9px] md:py-4 ${true ? 'border border-[#745FEA] text-[#745FEA]' : 'text-white'} rounded-xl `}>Featured</button>
             </div>
 
             <div className="rounded-xl shadow-stepShadow">

@@ -20,7 +20,7 @@ const Deal = () => {
 
              </div>
              <button>
-          <svg id="Component_16_39" data-name="Component 16 – 39" xmlns="http://www.w3.org/2000/svg" width={6} height={26} viewBox="0 0 6 26">
+          <svg id="Component_16_39" data-name="Component 16  39" xmlns="http://www.w3.org/2000/svg" width={6} height={26} viewBox="0 0 6 26">
 <path id="Path_4176" data-name="Path 4176" d="M12.889,8.778A2.889,2.889,0,1,0,10,5.889,2.889,2.889,0,0,0,12.889,8.778Zm0,14.444a2.889,2.889,0,1,0,2.889,2.889A2.889,2.889,0,0,0,12.889,23.222Zm0-10.111A2.889,2.889,0,1,0,15.778,16,2.889,2.889,0,0,0,12.889,13.111Z" transform="translate(-9.889 -3)" fill="#fff" />
 <circle id="Ellipse_729" data-name="Ellipse 729" cx={3} cy={3} r={3} transform="translate(0 10.111)" fill="#ffa31a" />
 </svg>
