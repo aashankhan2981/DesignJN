@@ -95,7 +95,7 @@ export default function Home() {
 {
   whyData.map(({heading,icon,content})=>{
 
-  return  <Why heading={heading} content={content} icon={icon} />
+  return  <Why key={content+Math.random()} heading={heading} content={content} icon={icon} />
 
   })
 }
