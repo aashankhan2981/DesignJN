@@ -2,8 +2,8 @@ import React from 'react'
 
 const Deal = () => {
   return (
-    <div className="rounded-xl shadow-stepShadow">
-    <div className="rounded-xl p-5 sm:p-[30px] shadow-Shadow2 ">
+    <div className="rounded-[30px] shadow-stepShadow">
+    <div className="rounded-[30px] p-5 sm:p-[30px] shadow-Shadow2 ">
       <div className="relative flex items-center justify-between">
         <p className="text-2xl  leading-[30px] font-bold text-white">Flight Tickets</p>
         <div className="flex top-[50px] absolute md:hidden gap-1 items-center">

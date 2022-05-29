@@ -12,8 +12,28 @@ body {
   box-shadow: 0px -6px 14px 3px #ffffff0d;
 }
 
+.swiper-slide-active > div > div{
+  box-shadow: -8px -8px 10px rgba(58, 58, 58, 0.7);
+
+}
+.swiper-slide-active > div{
+  padding-top: 86px;
+
+}
+.swiper-slide-active{
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+  
+}
+.swiper-slide-next, .swiper-slide-prev{
+  transform: scale(0.9);
+  transition: all 0.5s ease-in-out;
 
 
+}
+.swiper-slide-active > div > div > div{
+  box-shadow: 8px 8px 76px rgb(0 0 0 / 70%);
+}
 
 a {
   color: inherit;
