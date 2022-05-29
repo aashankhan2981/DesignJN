@@ -105,7 +105,7 @@ quick bids</p>
 
 <p className="text-2xl text-white font-semibold">Approve</p>
 <img src="/assets/images/landing/approved.svg" className="mt-[-20px]" alt="post" />
-<p className="text-lg text-white mt-[-30px]">Get deal done & approve paymeents</p>
+<p className="text-lg text-white mt-[-20px]">Get deal done & approve paymeents</p>
    </div>
 
        </div>
