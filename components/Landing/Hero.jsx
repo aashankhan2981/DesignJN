@@ -25,7 +25,7 @@ const Hero = () => {
                </div>
             </div>
 
-        <img src='/assets/images/landing/boywithsofa.svg' alt='boy pic' className= 'pr-6  relative z-10 max-h-[500px] xl:max-h-[600px] 2xl:max-h-[696px]  3xl:max-h-[796px]'  />
+        <img src='/assets/images/landing/boywithsofa.svg' alt='boy pic' className= 'md:pr-6 md:px-0 px-4  relative z-10 max-h-[500px] xl:max-h-[600px] 2xl:max-h-[696px]  3xl:max-h-[796px]'  />
 
         </div>
         
