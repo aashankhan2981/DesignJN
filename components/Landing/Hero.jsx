@@ -16,7 +16,7 @@ const Hero = () => {
                 <h1 className='font-bold max-w-[625px] text-3xl md:text-4xl leading-10 text-center text-white block lg:hidden '><span className='text-site_yellow'>Deals</span> Aisi Aisi, ki Dil <span className='text-site_yellow'>Garden Garden</span> ho Jaaye... </h1>
                 <p className='text-light_text text-lg leading-[25px] text-center lg:text-left lg:mt-8 mt-6 lg:max-w-[417px] lg:pr-7 2xl:pr-0 xl:pr-4'>Listening to your needs and answering with an innovative solution</p>
                <div className='flex justify-center xsm:flex-row flex-col lg:mt-8 mt-6 xl:gap-7 lg:gap-6 items-center gap-6 md:gap-8  2xl:gap-9 lg:justify-start'> 
-               <button className='text-white    font-medium bg-gradient-to-l from-[#FFA31A] to-[#FEB12E] rounded-lg px-3 py-5 text-lg leading-7'>Browse Categories </button>
+               <button className='text-white    font-medium bg-gradient-to-l from-[#FFA31A] to-[#FEB12E] rounded-xl px-3 py-5 text-lg leading-7'>Browse Categories </button>
                <button className='text-white      font-medium  text-lg leading-7'>How it Works?  </button>
                </div>
                <div className='flex justify-center'>
