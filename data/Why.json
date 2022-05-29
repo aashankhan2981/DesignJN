@@ -1,0 +1,24 @@
+
+     [
+        {
+            "heading":"Verified Users",
+            "content":"Rating in reviews to trust",
+            "icon":"verified"
+        },
+       {
+            "heading":"Fast & Quick",
+            "content":"Get bids within 5 mins",
+            "icon":"fast"
+        },
+        {
+            "heading":"Safe & Secure",
+            "content":"Always know that payments release after your approve",
+            "icon":"lock"
+        },{
+            "heading":"24/7 Support",
+            "content":"Round the clock support team to help anytime anywhere",
+            "icon":"clock"
+        }
+    ]
+
+

@@ -9,7 +9,7 @@ const Header = () => {
          e.target.setAttribute('aria-expanded', e.target.classList.contains('opened'))
          }
     return (
-        <div className='bg-site_black max-w-[1920px] w-full md:px-8 px-6 lg:px-14 xl:px-[100px] 2xl:px-[150px] flex justify-between items-center h-[120px]'>
+        <div className='sticky top-0 z-50 bg-site_black max-w-[1920px] w-full md:px-8 px-6 lg:px-14 xl:px-[100px] 2xl:px-[150px] flex justify-between items-center h-[90px] xl:h-[120px]'>
             <div className='flex 2xl:w-[40%] gap-5  items-center'>
 
                 <Image src={Bars} />

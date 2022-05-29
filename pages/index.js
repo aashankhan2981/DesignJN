@@ -1,5 +1,8 @@
 import Hero from "../components/Landing/Hero";
+import Process from "../components/Landing/Process";
 import Steps from "../components/Landing/Steps";
+import Why from "../components/Landing/Why";
+import whyData from '../data/Why.json'
 
 export default function Home() {
   return (
@@ -13,8 +16,7 @@ export default function Home() {
     <img  src="/assets/images/landing/betakit.svg" alt="logos" />
     </div>
     <Steps/>
-    <div className="2xl:mt-[290px] relative px-6 md:px-8 xl:px-14 pb-[120px] rounded-xl  max-w-[900px] lg:max-w-[1000px] xl:max-w-[1420px] w-full xl:mt-[230px] lg:mt-[150px] mt-[100px]">
-      <img src="/assets/images/landing/circle.svg"  className="absolute bottom-0 pr-4 right-0" alt="" />
+    <div className="2xl:mt-[290px] relative px-6 md:px-8 xl:px-14 pb-[60px] xl:pb-[120px] rounded-xl  max-w-[900px] lg:max-w-[1000px] xl:max-w-[1420px] w-full xl:mt-[230px] lg:mt-[150px] mt-[100px]">
              <div className="bg-[#292929] xl:flex-row flex-col-reverse relative flex justify-between px-[40px] lg:px-[100px] rounded-[30px] py-[50px] lg:py-[95px]">
                <img src="/assets/images/landing/surag.svg" className="absolute top-[-5%] md:top-[-7%] left-[-2%]" alt="" />
              <div className="">
@@ -71,45 +73,37 @@ export default function Home() {
 
     </div>
     {/* getting super discount */}
-    <div className="mt-7 flex flex-col px-4 md:px-6  items-center">
-      <p className="font-bold text-4xl leading-[50px] md:text-[55px] text-center md:leading-[70px] text-white max-w-[1027px]">Getting Best Discount is Supper Easy</p>
-       <p className="text-base leading-[25px] mt-[37px] text-light_text max-w-[757px] text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas aenean diam varius euismod amet, donec eget cursus. </p>
-       <img src="/assets/images/landing/sketch.svg" alt="" className="md:flex hidden" />
-       <div className="flex flex-col md:hidden mt-10">
-            <div className="flex flex-col pb-8 items-center ">
+     <Process/>
+     <div className="relative mt-[100px] w-full px-4 md:px-6 lg:px-8 xl:px-12 xl:mt-[199px] ">
 
-         <p className="text-2xl text-white font-semibold">Post</p>
-         <img src="/assets/images/landing/post.svg" className="mt-[-20px]" alt="post" />
-         <p className="text-lg text-white mt-[-30px]">Post requirements</p>
-            <img src="/assets/images/landing/arrow.svg" className="mt-7" alt="" />
-            </div>
+       <div>
+         <h3 className="font-bold flex text-3xl text-center xl:text-[55px] items-end justify-center xl:leading-[50px]  text-white">Why Deals Jn <span><svg className="md:w-4 w-3 h-3 md:h-4 " xmlns="http://www.w3.org/2000/svg" width={224} height={224} viewBox="0 0 224 224">
+  <g id="Ellipse_732" data-name="Ellipse 732" fill="#ffa31a" stroke="#ffa31a" strokeWidth={1}>
+    <circle cx={112} cy={112} r={112} stroke="none" />
+    <circle cx={112} cy={112} r="111.5" fill="none" />
+  </g>
+</svg>
 
-            <div className="flex flex-col pb-8 items-center ">
 
-<p className="text-2xl text-white font-semibold">Receive</p>
-<img src="/assets/images/landing/recieve.svg" className="mt-[-20px]" alt="post" />
-<p className="text-lg text-white mt-[-30px]">Receive
-quick bids</p>
-   <img src="/assets/images/landing/arrow.svg" className="mt-7" alt="" />
-   </div>
 
-   <div className="flex flex-col pb-8 items-center ">
+</span></h3>
+<div className="relative flex justify-center">
 
-<p className="text-2xl text-white font-semibold">Select</p>
-<img src="/assets/images/landing/select.svg" className="mt-[-20px]" alt="post" />
-<p className="text-lg text-white mt-[-30px]">Chat & select sellers</p>
-   <img src="/assets/images/landing/arrow.svg" className="mt-7" alt="" />
-   </div>
 
-   <div className="flex flex-col pb-8 items-center ">
+<img src="/assets/images/landing/circle.svg"  className="absolute md:flex hidden top-[-4%] left-0 xl:left-[2%] 2xl:left-[8%] 3xl:left-[10%]" alt="" />
+         <div className="mt-[70px] w-full place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-[1260px] gap-[44px]">
+{
+  whyData.map(({heading,icon,content})=>{
 
-<p className="text-2xl text-white font-semibold">Approve</p>
-<img src="/assets/images/landing/approved.svg" className="mt-[-20px]" alt="post" />
-<p className="text-lg text-white mt-[-20px]">Get deal done & approve paymeents</p>
-   </div>
+  return  <Why heading={heading} content={content} icon={icon} />
+
+  })
+}
+         </div>
+</div>
 
        </div>
-    </div>
+     </div>
     </div>
   )
 }
