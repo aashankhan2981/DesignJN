@@ -15,8 +15,8 @@ dolor etiam elementum.</p>
         </div>
         <img src="/assets/images/footer/dots.svg" className='xl:flex hidden absolute  left-[33%] top-1/2 ' alt="" />
         <div className='flex sm:flex-nowrap flex-wrap items-start w-full xl:w-auto justify-between lg:justify-start gap-y-7 sm:gap-y-0 gap-5 md:gap-8 lg:gap-10 xl:gap-[50px] 2xl:gap-[67px]'>
-            {data?.map((item)=>{
-                return <div>
+            {data?.map((item,index)=>{
+                return <div key={index+Math.random()}>
                 <p className='text-lg mb-4 sm:mb-7 xl:mb-[35px] leading-[25px] text-white'>{item.heading}</p>
                 <div className='flex flex-col gap-[15px]'>
                 {item.items.map((value)=>{

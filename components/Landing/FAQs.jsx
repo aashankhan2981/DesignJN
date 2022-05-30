@@ -41,7 +41,7 @@ const FAQs = () => {
            return <div key={index+Math.random()} className='max-w-[1228px]  w-full rounded-[30px] shadow-stepShadow'>
                <div className='max-w-[1228px] pl-[37px] pt-[33px] pb-10 pr-[30px] transition-all ease-in-out duration-700   w-full rounded-[30px] shadow-Shadow2'>
                    <div className='justify-between items-center flex '>
-                       <p className='text-white text-xl leading-5'>Are my card details safe?</p>
+                       <p className='text-white text-xl leading-5'>{heading}</p>
                        <div className='w-[30px]  h-[30px] rounded-full shadow-stepShadow'><button onClick={()=>{handleToggle(index)}} className='w-[30px] flex justify-center items-center shadow-Shadow2 h-[30px] rounded-full'>
                       <svg className={`${toggle && (!toggle[index]?'rotate-180':"rotate-0")} transition-all duration-1000 ease-in-out `} width={12} height={8} viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M10.5036 6.50031L5.8353 1.83704L1.16704 6.50031" stroke="#FFA31A" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
