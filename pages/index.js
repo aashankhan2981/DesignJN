@@ -299,7 +299,7 @@ export default function Home() {
             Someone dropped
             this  </p>
           <p className="text-xl lg:text-left text-center leading-[22px] font-bold text-white mt-[10px]">If this belongs to you</p>
-          <button className='w-full max-w-[180px] bg-gradient-to-l from-[#FFA31A] to-[#FEB12E] flex items-center justify-center py-[9px]  md:py-4 font-medium text-base sm:text-lg sm:leading-[27px] text-white rounded-xl mt-7 sm:mt-[40px] lg:mt-[55px]'>Subscribe</button>
+          <button className='w-full max-w-[180px] bg-gradient-to-l from-[#FFA31A] to-[#FEB12E] flex items-center justify-center py-[9px]  md:py-4 font-medium text-base sm:text-lg sm:leading-[27px] text-white rounded-xl mt-7 sm:mt-[40px] lg:mt-[55px]'>Contact Us</button>
 
         </div>
       </div>

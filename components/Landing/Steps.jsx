@@ -54,7 +54,7 @@ to receive <span className='text-site_yellow'>₹100</span>  in wallet.</p>
 <div className='mt-14 flex sm:flex-row flex-col items-center  xl:gap-7 gap-5 2xl:gap-9'>
 
            <p className='text-2xl leading-6 text-white'><span className='text-[#FF0000]'>Expires</span> in 00:59 Min </p>
-           <button className='bg-gradient-to-l px-9 from-[#FFA31A] text-lg leading-7 font-medium text-white flex h-[65px] items-center to-[#FEB12E] rounded-xl'><Link href={'/register'} >Signup Now</Link> </button>
+           <button className='bg-gradient-to-l md:px-9 from-[#FFA31A]  md:leading-7 font-medium text-white flex py-[9px]   text-base sm:text-lg sm:leading-[27px] px-3  items-center to-[#FEB12E] rounded-xl'><Link href={'/register'} >Signup Now</Link> </button>
 </div>
 <img className='mt-20' src="/assets/images/landing/crosses.svg" alt="" />
             </div>
