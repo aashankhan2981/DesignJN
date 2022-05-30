@@ -59,7 +59,7 @@ const FAQs = () => {
 
        })}
           </div>
-          <button className='w-full max-w-[180px] bg-gradient-to-l from-[#FFA31A] to-[#FEB12E] flex items-center justify-center py-4 font-medium text-lg leading-[27px] text-white rounded-xl mt-[40px] lg:mt-[60px]'>See More</button>
+          <button className='w-full max-w-[180px] bg-gradient-to-l from-[#FFA31A] to-[#FEB12E] flex items-center justify-center py-[9px]  md:py-4 font-medium text-base sm:text-lg sm:leading-[27px] text-white rounded-xl  mt-[40px] lg:mt-[60px]'>See More</button>
 
     </div>
   )

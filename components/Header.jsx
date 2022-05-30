@@ -34,10 +34,10 @@ const Header = () => {
                     <Link className='' href={''}>
                         <button className='header-button px-6 py-4 2xl:px-6 text-site_yellow rounded-xl 2xl:py-5 font-medium text-lg leading-7'>Post requirement </button>
                     </Link>
-                    <Link href={''}>
+                    <Link href={'/login'}>
                         <button className='text-white font-medium text-lg leading-7'> Login </button>
                     </Link>
-                    <Link href={''}>
+                    <Link href={'/register'}>
                         <button className='text-white px-10 py-4 font-medium bg-site_yellow rounded-xl 2xl:px-12 2xl:py-5 text-lg leading-7'> Join </button>
                     </Link>
                 </div>

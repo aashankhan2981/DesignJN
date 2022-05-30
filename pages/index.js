@@ -8,7 +8,7 @@ import whyData from '../data/Why.json'
 import categories from '../data/categories.json'
 import SwiperCard from "../components/Landing/SwiperCard";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {Navigation} from 'swiper'
+import { Navigation } from 'swiper'
 
 // Import Swiper styles
 import "swiper/css";
@@ -192,102 +192,118 @@ export default function Home() {
         </div>
         <p className="max-w-[723px] text-center mb-[100px] lg:mb-[121px] xl:mb-[131px] sm:text-3xl text-2xl  lg:text-4xl xl:text-[55px] xl:leading-[65px] font-bold text-white">Don't Take Our Words,
           Take theirs.</p>
-          <div className="relative  slider w-full flex justify-between">
-            
-            <div className="review-swiper-button-prev w-[30px] z-30 h-[30px]  absolute top-[50%] left-2 xl:left-[-33px] shadow-stepShadow rounded-full">
-              <button className="flex items-center justify-center shadow-Shadow2 w-[30px] h-[30px] rounded-full ">
+        <div className="relative  slider w-full flex justify-between">
+
+          <div className="review-swiper-button-prev w-[30px] z-30 h-[30px]  absolute top-[50%] left-2 xl:left-[-33px] shadow-stepShadow rounded-full">
+            <button className="flex items-center justify-center shadow-Shadow2 w-[30px] h-[30px] rounded-full ">
               <svg width={7} height={12} viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M5.68671 1.50001L1.01971 6.16601L5.68671 10.833" stroke="#FFA31A" strokeWidth={2} strokeMiterlimit={10} strokeLinecap="round" strokeLinejoin="round" />
-</svg>
+                <path d="M5.68671 1.50001L1.01971 6.16601L5.68671 10.833" stroke="#FFA31A" strokeWidth={2} strokeMiterlimit={10} strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
 
 
-              </button>
-            </div>
-            
-            <Swiper 
+            </button>
+          </div>
+
+          <Swiper
             className="swiper"
             modules={[Navigation]}
             navigation={{
               nextEl: '.review-swiper-button-next',
               prevEl: '.review-swiper-button-prev',
             }}
-             spaceBetween={30}
-             slidesPerView={3}
-             onSlideChange={() => console.log('slide change')}
-             onSwiper={(swiper) => console.log(swiper)}
-             loop={true}
-             effect={"coverflow"}
-             breakpoints={{
+            spaceBetween={30}
+            slidesPerView={3}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+            loop={true}
+            effect={"coverflow"}
+            breakpoints={{
               320: {
-                  slidesPerView: 1,
-                  
+                slidesPerView: 1,
+
               },
               640: {
-                  slidesPerView: 1,
+                slidesPerView: 1,
               },
               768: {
-                  slidesPerView: 2,
-                  spaceBetween:30,
-                 centeredSlides:true,
+                slidesPerView: 2,
+                spaceBetween: 30,
+                centeredSlides: true,
 
 
               },
               1024: {
-                  slidesPerView: 3,
-                  spaceBetween:30,
-                 centeredSlides:true
+                slidesPerView: 3,
+                spaceBetween: 30,
+                centeredSlides: true
 
               }
 
-          }}
-              
-            
-            >
-              <SwiperSlide>
-
-     <SwiperCard/>
-              </SwiperSlide>
-              <SwiperSlide>
-
-<SwiperCard/>
-         </SwiperSlide>
-         <SwiperSlide>
-
-<SwiperCard/>
-         </SwiperSlide>
-         
-            </Swiper>
-            <div className="review-swiper-button-next w-[30px] z-30 h-[30px] absolute top-[50%] right-3 xl:right-[-13px] shadow-stepShadow rounded-full">
-              <button className="flex justify-center items-center shadow-Shadow2 w-[30px] h-[30px] rounded-full ">
-             <svg width={8} height={12} viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M1.68671 1.50001L6.35371 6.16601L1.68671 10.833" stroke="#FFA31A" strokeWidth={2} strokeMiterlimit={10} strokeLinecap="round" strokeLinejoin="round" />
-</svg>
+            }}
 
 
-              </button>
-            </div>
-            
+          >
+            <SwiperSlide>
 
+              <SwiperCard />
+            </SwiperSlide>
+            <SwiperSlide>
+
+              <SwiperCard />
+            </SwiperSlide>
+            <SwiperSlide>
+
+              <SwiperCard />
+            </SwiperSlide>
+
+          </Swiper>
+          <div className="review-swiper-button-next w-[30px] z-30 h-[30px] absolute top-[50%] right-3 xl:right-[-13px] shadow-stepShadow rounded-full">
+            <button className="flex justify-center items-center shadow-Shadow2 w-[30px] h-[30px] rounded-full ">
+              <svg width={8} height={12} viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.68671 1.50001L6.35371 6.16601L1.68671 10.833" stroke="#FFA31A" strokeWidth={2} strokeMiterlimit={10} strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+
+
+            </button>
           </div>
 
 
+        </div>
+
+
       </div>
-      <FAQs/>
+      <FAQs />
 
-      <div className="max-w-[1206px] w-full flex justify-between items-center gap-4">
-        <div className="max-w-[612px] w-full ">
-          <p className="font-bold text-[55px] leading-[65px]  text-white">Subscribe to get Hottest Deals in inbox </p>
-          <p className="mt-[22px] text-white text-xl leading-[22px] font-semibold max-w-[452px] ">We're not that  <span className="text-site_yellow">type</span> of company (who spam)</p>
-          <form action="">
-            <div className="shadow-div rounded-[10px]">
+      <div className="max-w-[1291px]  mt-[76px] md:mt-[86px] lg:px-10 md:px-6 px-4 w-full flex lg:flex-row flex-col-reverse justify-between items-center gap-4">
+        <div className="xl:max-w-[612px] w-full lg:w-1/2 xl:w-full ">
+          <p className="font-bold xl:text-[55px] lg:text-left text-center md:text-3xl text-xl  sm:text-2xl  lg:text-4xl xl:leading-[65px]  text-white">Subscribe to get Hottest Deals in inbox </p>
+          <p className="mt-4 sm:mt-[22px] text-white text-base sm:text-lg md:text-xl lg:text-left text-center lg:leading-[22px] font-semibold lg:max-w-[452px] ">We're not that  <span className="text-site_yellow">type</span> of company (who spam)</p>
+          <form action="#" className="flex flex-col items-center lg:items-start mt-[34px] ">
 
-            <input type="text"  className="px-[30px] bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
-            </div>
+            <input type="text" placeholder="Full Name" className="mb-[25px] px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
+            <input type="email" required placeholder="Email Address" className=" px-[30px]  text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
+            <button type="submit" className='w-full max-w-[180px] bg-gradient-to-l from-[#FFA31A] to-[#FEB12E] flex items-center justify-center py-[9px]  md:py-4 font-medium text-base sm:text-lg sm:leading-[27px] text-white rounded-xl mt-6 sm:mt-[30px] lg:mt-[34px]'>Subscribe</button>
+
           </form>
 
         </div>
-          <img src="/assets/images/landing/laptop.svg" alt="laptop" />
+        <img className="xl:w-auto lg:w-1/2 w-full" src="/assets/images/landing/laptop.svg" alt="laptop" />
       </div>
+      <div className="max-w-[1270px] mb-[150px] lg:mb-[200px] mt-[80px] md:mt-[111px] lg:px-10 md:px-6 px-4 w-full flex lg:flex-row flex-col justify-start items-center gap-4 xl:gap-10 lg:gap-6 2xl:gap-[60px] ">
+        <img src="/assets/images/landing/paisa.svg" className="lg:w-[54%]" alt="paisa" />
+        <div className="flex flex-col lg:items-start items-center">
+          <p className="lg:max-w-[520px] lg:block hidden  md:text-3xl text-xl  sm:text-2xl  lg:text-4xl xl:leading-[70px] text-white xl:text-[55px] font-bold"><span className="text-[#FF0000]">Oops!!</span><br />
+            Someone dropped
+            this  </p>
+          <p className="lg:max-w-[520px] lg:hidden block  md:text-3xl text-xl  sm:text-2xl  lg:text-4xl xl:leading-[70px] text-white xl:text-[55px] font-bold text-center"><span className="text-[#FF0000]">Oops!!</span>
+            Someone dropped
+            this  </p>
+          <p className="text-xl lg:text-left text-center leading-[22px] font-bold text-white mt-[10px]">If this belongs to you</p>
+          <button className='w-full max-w-[180px] bg-gradient-to-l from-[#FFA31A] to-[#FEB12E] flex items-center justify-center py-[9px]  md:py-4 font-medium text-base sm:text-lg sm:leading-[27px] text-white rounded-xl mt-7 sm:mt-[40px] lg:mt-[55px]'>Subscribe</button>
+
+        </div>
+      </div>
+
     </div>
   )
 }
