@@ -19,9 +19,9 @@ dolor etiam elementum.</p>
                 return <div key={index+Math.random()}>
                 <p className='text-lg mb-4 sm:mb-7 xl:mb-[35px] leading-[25px] text-white'>{item.heading}</p>
                 <div className='flex flex-col gap-[15px]'>
-                {item.items.map((value)=>{
+                {item.items.map((value,index)=>{
                     
-                  return  <p className='text-lg text-light_text leading-[25px]'>{value}</p>
+                  return  <p key={value+Math.random()} className='text-lg text-light_text leading-[25px]'>{value}</p>
                 }) 
  }
                 </div>
