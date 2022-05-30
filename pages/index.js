@@ -12,6 +12,7 @@ import {Navigation} from 'swiper'
 
 // Import Swiper styles
 import "swiper/css";
+import FAQs from "../components/Landing/FAQs";
 
 export default function Home() {
   return (
@@ -185,40 +186,60 @@ export default function Home() {
         </div>
 
       </div>
-      <div className="relative w-full px-4 md:px-6 lg:px-8 xl:px-12 flex max-w-[1286px] lg:mt-[100px] mt-14 xl:mt-[150px] items-center flex-col ">
+      <div className="relative  w-full px-4 md:px-6 lg:px-8 xl:px-12 flex max-w-[1286px] lg:mt-[100px] mt-14 xl:mt-[150px] items-center flex-col ">
         <div className="mb-14 flex w-full justify-end">
           <img src="/assets/images/landing/karry.svg" alt="karry" />
         </div>
         <p className="max-w-[723px] text-center mb-[100px] lg:mb-[121px] xl:mb-[131px] sm:text-3xl text-2xl  lg:text-4xl xl:text-[55px] xl:leading-[65px] font-bold text-white">Don't Take Our Words,
           Take theirs.</p>
-          <div className="relative slider w-full flex justify-between">
-            <button className=" review-swiper-button-prev w-[40px] h-[40px] absolute top-[50%] left-[-33px]">
-              <img src="/assets/images/landing/swiperprev.svg" className="w-full h-full" alt="" />
-            </button>
+          <div className="relative  slider w-full flex justify-between">
+            
+            <div className="review-swiper-button-prev w-[30px] z-30 h-[30px]  absolute top-[50%] left-2 xl:left-[-33px] shadow-stepShadow rounded-full">
+              <button className="flex items-center justify-center shadow-Shadow2 w-[30px] h-[30px] rounded-full ">
+              <svg width={7} height={12} viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5.68671 1.50001L1.01971 6.16601L5.68671 10.833" stroke="#FFA31A" strokeWidth={2} strokeMiterlimit={10} strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+
+
+              </button>
+            </div>
+            
             <Swiper 
+            className="swiper"
             modules={[Navigation]}
             navigation={{
               nextEl: '.review-swiper-button-next',
               prevEl: '.review-swiper-button-prev',
             }}
-             spaceBetween={40}
+             spaceBetween={30}
              slidesPerView={3}
              onSlideChange={() => console.log('slide change')}
              onSwiper={(swiper) => console.log(swiper)}
              loop={true}
              effect={"coverflow"}
              breakpoints={{
-              // when window width is >= 640px
+              320: {
+                  slidesPerView: 1,
+                  
+              },
               640: {
-                slidesPerView: 2,
-                spaceBetween:20,
+                  slidesPerView: 1,
               },
-              // when window width is >= 768px
               768: {
-                slidesPerView: 3,
+                  slidesPerView: 2,
+                  spaceBetween:30,
+                 centeredSlides:true,
+
+
               },
-            }}
-             centeredSlides={true}
+              1024: {
+                  slidesPerView: 3,
+                  spaceBetween:30,
+                 centeredSlides:true
+
+              }
+
+          }}
               
             
             >
@@ -234,14 +255,38 @@ export default function Home() {
 
 <SwiperCard/>
          </SwiperSlide>
+         
             </Swiper>
-            <button className="review-swiper-button-next w-[30px] h-[30px] absolute top-[50%] right-[-13px]">
-              <img src="/assets/images/landing/swipernext.svg" className="w-full h-full" alt="" />
-            </button>
+            <div className="review-swiper-button-next w-[30px] z-30 h-[30px] absolute top-[50%] right-3 xl:right-[-13px] shadow-stepShadow rounded-full">
+              <button className="flex justify-center items-center shadow-Shadow2 w-[30px] h-[30px] rounded-full ">
+             <svg width={8} height={12} viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1.68671 1.50001L6.35371 6.16601L1.68671 10.833" stroke="#FFA31A" strokeWidth={2} strokeMiterlimit={10} strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+
+
+              </button>
+            </div>
+            
 
           </div>
 
 
+      </div>
+      <FAQs/>
+
+      <div className="max-w-[1206px] w-full flex justify-between items-center gap-4">
+        <div className="max-w-[612px] w-full ">
+          <p className="font-bold text-[55px] leading-[65px]  text-white">Subscribe to get Hottest Deals in inbox </p>
+          <p className="mt-[22px] text-white text-xl leading-[22px] font-semibold max-w-[452px] ">We're not that  <span className="text-site_yellow">type</span> of company (who spam)</p>
+          <form action="">
+            <div className="shadow-div rounded-[10px]">
+
+            <input type="text"  className="px-[30px] bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
+            </div>
+          </form>
+
+        </div>
+          <img src="/assets/images/landing/laptop.svg" alt="laptop" />
       </div>
     </div>
   )
