@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 const Index = () => {
   return (
     <div className='mt-5 lg:mt-[60px] pb-24 max-w-[1920px] w-full  md:px-8 px-6 lg:px-14 xl:px-[100px] 2xl:px-[150px]'>
@@ -28,9 +28,9 @@ const Index = () => {
           <form action="#" className="flex flex-col items-center lg:items-start mt-[25px] ">
 
 <input type="email" placeholder="Email Address / Username / Mobile Number" className="mb-[25px] px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
-<div className='flex justify-between items-center pl-[30px] pr-5 text-[15px] leading-[18px]  py-[22px] shadow-input rounded-[10px] bg-site_black w-full max-w-[540px]'>
+<div className='flex justify-between items-center  shadow-input rounded-[10px] gap-4 pr-5 bg-site_black w-full max-w-[540px]'>
 
-<input type="password" required placeholder="Password" className=" outline-none text-light_text bg-transparent rounded-[10px] h-full w-full" />
+<input type="password" required placeholder="Password" className="pl-[30px]  rounded-l-[10px] text-[15px] leading-[18px]  py-[22px] outline-none text-light_text bg-transparent  h-full w-full" />
 <img src="/assets/images/login/password.svg" alt="monkey" />
 
 </div>
@@ -62,7 +62,7 @@ Login with Facebook
 </button>
 </div>
 </div>
-<p className='text-lg leading-[25px] mt-10 text-center w-full xl:mt-[60px] text-light_text'>Don't have account ? <span className='text-[#745FEA]'>Register Now</span> </p>
+<p className='text-lg leading-[25px] mt-10 text-center w-full xl:mt-[60px] text-light_text'>Don't have account ? <span className='text-[#745FEA]'><Link href={'/register'}>Register Now</Link></span> </p>
 
 </form>
 

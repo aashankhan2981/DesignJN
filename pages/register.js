@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import Link from 'next/link'
 const Index = () => {
     const [checkbox,setChecked] = useState(false)
   return (
@@ -79,7 +79,7 @@ Login with Facebook
 </div>
 
 <p className='text-lg leading-[25px] mt-10 text-center w-full xl:mt-[60px] text-light_text'>
-Have account ? <span className='text-[#745FEA]'>Login Here</span> </p>
+Have account ?  <span className='text-[#745FEA]'><Link href={'/login'}>Login Here</Link> </span> </p>
 
 </form>
 
