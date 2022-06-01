@@ -1,0 +1,18 @@
+<svg id="Component_15_2" data-name="Component 15 – 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="568" height="65" viewBox="0 0 568 65">
+    <defs>
+      <clipPath id="clip-path">
+        <rect id="mask" width="568" height="65" rx="10" fill="#fff"/>
+      </clipPath>
+    </defs>
+    <g id="Mask_Group_2" data-name="Mask Group 2" clip-path="url(#clip-path)">
+      <g id="dark" fill="none" stroke="rgba(0,0,0,0.7)" stroke-width="5">
+        <rect width="589.037" height="85" rx="10" stroke="none"/>
+        <rect x="2.5" y="2.5" width="584.037" height="80" rx="7.5" fill="none"/>
+      </g>
+      <g id="light" transform="translate(-15.778 -15)" fill="none" stroke="rgba(58,58,58,0.7)" stroke-width="5">
+        <rect width="589.037" height="85" rx="10" stroke="none"/>
+        <rect x="2.5" y="2.5" width="584.037" height="80" rx="7.5" fill="none"/>
+      </g>
+    </g>
+  </svg>
+  

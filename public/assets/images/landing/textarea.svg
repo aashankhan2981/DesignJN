@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1110" height="244" viewBox="0 0 1110 244">
+    <defs>
+      <clipPath id="clip-path">
+        <rect id="mask" width="1110" height="244" rx="10" fill="#fff"/>
+      </clipPath>
+    </defs>
+    <g id="Mask_Group_2" data-name="Mask Group 2" clip-path="url(#clip-path)">
+      <g id="dark" fill="none" stroke="rgba(0,0,0,0.7)" stroke-width="5">
+        <rect width="1151.111" height="319.077" rx="10" stroke="none"/>
+        <rect x="2.5" y="2.5" width="1146.111" height="314.077" rx="7.5" fill="none"/>
+      </g>
+      <g id="light" transform="translate(-30.833 -56.308)" fill="none" stroke="rgba(58,58,58,0.7)" stroke-width="5">
+        <rect width="1145.83" height="305.31" rx="10" stroke="none"/>
+        <rect x="2.5" y="2.5" width="1140.83" height="300.31" rx="7.5" fill="none"/>
+      </g>
+    </g>
+  </svg>
+  
