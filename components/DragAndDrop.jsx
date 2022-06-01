@@ -9,8 +9,8 @@ const DragAndDrop = () => {
     drop.current.addEventListener('drop', handleDrop);
 
     return () => {
-      drop.current.removeEventListener('dragover', handleDragOver);
-      drop.current.removeEventListener('drop', handleDrop);
+      drop && drop.current.removeEventListener('dragover', handleDragOver);
+      drop && drop.current.removeEventListener('drop', handleDrop);
     };
   }, []);
 

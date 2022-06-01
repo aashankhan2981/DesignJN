@@ -1,10 +1,12 @@
-import React, { useState ,useRef} from "react";
+import React, { useState ,useRef,useEffect} from "react";
 
 
 const DropDown = ({categories}) => {
     const [toggle, setToggle] = useState(false);
-    const [active, setActive] = useState( { value: "0", content: "Select Category" });
- 
+    const [active, setActive] = useState( { });
+    useEffect(()=>{
+      setActive(categories[0])
+    },[categories])
     const handleDropDown = (v)=>{
         setToggle(false)
         let selected =  categories.find((item)=>item.value==v)
@@ -12,7 +14,7 @@ const DropDown = ({categories}) => {
   
     }
   return (
-    <div className={`relative overflow- z-40 mt-[15px] shadow-stepShadow ${toggle?'':'rounded-b-xl'} rounded-t-xl max-w-[535px]`}>
+    <div className={`relative overflow- z-0 mt-[15px] shadow-stepShadow ${toggle?'':'rounded-b-xl'} rounded-t-xl max-w-[535px]`}>
     <div
       onClick={(e) => {
           e.stopPropagation()

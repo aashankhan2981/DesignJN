@@ -8,7 +8,7 @@ const Layout = ({children}) => {
   const router = useRouter()
   return (
     <div className='bg-site_black flex flex-col items-center'>
-        {withoutSiderBar.includes(router.pathname) ?
+        {!withoutSiderBar.includes(router.pathname) ?
        <> <Header/>
         {children}</>  
         :<div className='flex justify-between w-full'>
