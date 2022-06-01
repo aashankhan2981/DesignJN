@@ -137,3 +137,12 @@ a {
 .shadow-input{
  background: url('../public/assets/images/landing/input.svg');
 }
+.shadow-input2{
+  background: url('../public/assets/images/landing/input2.svg');
+ }
+.text-area{
+  background: url('../public/assets/images/landing/textarea.svg');
+ }
+ .shadow-inside{
+   filter: blur(3px) !important;
+ }
