@@ -203,6 +203,9 @@ input::-webkit-inner-spin-button {
 	border-radius: 50%;
 	z-index: 0;
 }
+.bg-checkbox{
+  background: url('../public/assets/images/requirements/checkbox.svg');
+}
 input[type=range] {
   -webkit-appearance: none;
   width: 100%;

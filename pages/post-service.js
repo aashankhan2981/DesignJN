@@ -57,7 +57,7 @@ const Index = () => {
       <p className="font-bold xl:text-[55px]  text-center md:text-3xl text-xl  sm:text-2xl  lg:text-4xl xl:leading-[65px]  text-white">
         Post Requirement
       </p>
-      <div className="flex items-center mt-[70px] gap-4 md:gap-6">
+      <div className="flex md:justify-start justify-center items-center mt-[70px] gap-4 md:gap-6">
         <div className="rounded-xl shadow-stepShadow">
           <button
             className={` px-4 md:px-7 text-base md:text-lg  md:leading-7 font-medium shadow-Shadow2 py-[9px] md:py-4 ${
@@ -79,9 +79,9 @@ const Index = () => {
         </div>
       </div>
       <form className="mt-10" action="#">
-        <div className="w-full flex justify-center items-center gap-10">
+        <div className="w-full md:flex-row flex-col flex justify-center items-center gap-10">
           <div className="w-full">
-            <p className="text-base text-white md:leading-5 md:text-xl w-full">
+            <p className="text-base text-white   md:leading-5 md:text-xl w-full">
               Category
             </p>
           
@@ -89,7 +89,7 @@ const Index = () => {
 
           </div>
           <div className="w-full">
-            <p className="text-base text-white md:leading-5 md:text-xl w-full">
+            <p className="text-base text-white  md:leading-5 md:text-xl w-full">
             Subcategory
             </p>
           
@@ -97,9 +97,9 @@ const Index = () => {
 
           </div>
         </div>
-        <div className="w-full mt-[30px] mb-[74px]  flex justify-center items-end gap-10">
+        <div className="w-full mt-[30px] mb-[74px]  md:flex-row flex-col flex justify-center items-end gap-10">
           <div className="w-full">
-            <p className="text-base text-white md:leading-5 md:text-xl w-full">
+            <p className="text-base text-white  md:leading-5 md:text-xl w-full">
             Parameter
             </p>
           
@@ -114,7 +114,7 @@ const Index = () => {
           </div>
         </div>
         <DragAndDrop/>
-        <p className="mt-[30px] text-base text-white md:leading-5 md:text-xl w-full">
+        <p className="mt-[30px] text-base text-white  md:leading-5 md:text-xl w-full">
         Description
             </p>
         <div className="relative w-full mt-[15px] rounded-xl  shadow-stepShadow" >
@@ -124,10 +124,10 @@ const Index = () => {
         
         </div>
 
-        <div className="flex items-center  justify-start gap-[30px]">
+        <div className="flex md:flex-row flex-col items-center  justify-start gap-[30px]">
        <div className="w-full max-w-[540px]">
 
-        <p className="mt-[30px] mb-[15px] text-base text-white md:leading-5 md:text-xl w-full">
+        <p className="mt-[30px] mb-[15px] text-base text-white  md:leading-5 md:text-xl w-full">
         Original value
             </p>
             <div className="flex gap-3 items-center px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black  py-[15px] shadow-input rounded-[10px] w-full max-w-[540px]">
@@ -154,15 +154,15 @@ const Index = () => {
 
 
        </div>
-       <div className="flex self-end">
+       <div className="md:flex hidden self-end">
        <p className="text-xl leading-[25px] pb-[15px] text-white">X</p>
 
        </div>
-       <div className="max-w-[204px] w-full">
-       <p className="mt-[30px] mb-[15px] text-base text-white md:leading-5 md:text-xl w-full">
+       <div className="md:max-w-[204px] w-full">
+       <p className="mt-[30px] mb-[15px] text-base text-white  md:leading-5 md:text-xl w-full">
        Quantity
             </p>
-          <div  className="flex justify-between items-center px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[18px]  shadow-input rounded-[10px] w-full " >
+          <div  className="flex justify-between md:max-w-max max-w-[204px] items-center px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[18px]  shadow-input rounded-[10px] w-full " >
             <button  type='button' onClick={()=>{setCount(count-1)}}>
 
             <img src="/assets/images/requirements/minus.svg" alt="" />
@@ -182,14 +182,14 @@ const Index = () => {
         <div className="flex justify-end max-w-[830px] mt-[30px] w-full">
 
         <div className="max-w-[266px] w-full shadow-stepShadow  rounded-xl">
-          <button className="text-lg rounded-xl font-medium leading-[27px] text-center p-4 max-w-[266px] w-full text-site_yellow shadow-Shadow2">
+          <button className="text-lg rounded-xl font-medium leading-[27px] text-center p-2 md:p-4 max-w-[266px] w-full text-site_yellow shadow-Shadow2">
           + Add Another
           </button>
         </div>
         </div>
         <div className="w-full max-w-[540px]">
 
-<p className="mt-[20px] mb-[15px] text-base text-white md:leading-5 md:text-xl w-full">
+<p className="mt-[20px] mb-[15px] text-base text-white  md:leading-5 md:text-xl w-full">
 Total amount 
     </p>
     <div className="flex gap-3 items-center px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black  py-[15px] shadow-input rounded-[10px] w-full max-w-[540px]">
@@ -202,7 +202,7 @@ Total amount
     
    
     </div>
-    <div className="mt-[70px] flex justify-between items-center">
+    <div className="mt-[70px] sm:flex-row gap-4 flex-col flex justify-between items-center">
       <div onClick={()=>{setActive(true)}} className="shadow-stepShadow rounded-xl w-full  max-w-[200px]">
       <div className={`shadow-Shadow2 ${Active&& "border border-site_yellow"} flex flex-col justify-center items-center h-[150px] text-xl text-white leading-[25px] gap-[10px] rounded-xl w-full max-w-[200px]`}>
         <p>Buying</p>
@@ -224,9 +224,9 @@ Total amount
 
 
 </div>
-<div className="max-w-[1110px] gap-5  mt-[70px] w-full flex justify-between items-end">
+<div className="max-w-[1110px] gap-5 md:flex-row flex-col   mt-[70px] w-full flex justify-between items-center md:items-end">
   <div className="w-full">
-  <p className=" mb-[15px] text-base text-white md:leading-5 md:text-xl w-full">
+  <p className=" mb-[15px] text-base text-white  md:leading-5 md:text-xl w-full">
 Total amount 
     </p>
     <div className="flex gap-3 items-center px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black  py-[15px] shadow-input rounded-[10px] w-full max-w-[540px]">
@@ -242,7 +242,7 @@ Total amount
   </div>
   <p className="text-xl leadig-[25px] py-[10px] text-light_text">Or</p>
   <div className="w-full">
-  <p className=" mb-[15px] text-base text-white md:leading-5 md:text-xl w-full">
+  <p className=" mb-[15px] text-base text-white  md:leading-5 md:text-xl w-full">
   Enter desired Discount in %/ ₹ here 
     </p>
     <div className="flex gap-3 items-center px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black  py-[15px] shadow-input rounded-[10px] w-full max-w-[540px]">
@@ -276,9 +276,9 @@ Total amount
   </div>
 </div>
 
-<div className="max-w-[1110px] gap-5  mt-[70px] w-full flex justify-between items-end">
+<div className="max-w-[1110px] gap-5 md:flex-row flex-col mt-[70px] w-full flex justify-between items-end">
   <div className="w-full">
-  <p className=" mb-[15px] text-base text-white md:leading-5 md:text-xl w-full">
+  <p className=" mb-[15px] text-base text-white  md:leading-5 md:text-xl w-full">
   Ask Question?
     </p>
     <DropDown categories={Questions} />
@@ -298,7 +298,7 @@ Total amount
 	</div>
   <p className="text-white text-xl leading-[25px]">GSTIN</p>
 </div>
-<div className="max-w-[1110px] gap-5  mt-[40px] w-full flex justify-between items-center">
+<div className="max-w-[1110px] md:flex-row flex-col gap-5  mt-[40px] w-full flex justify-between items-center">
  
  
 <input type="text" placeholder="GSTIN No" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
@@ -348,10 +348,10 @@ Total amount
       </form>
 
       <div className="relative  px-4 md:px-6 lg:px-8 xl:px-12  w-full max-w-[1260px] flex flex-col items-center xl:mt-[200px] mt-[130px] ">
-        <div className="flex justify-between w-full items-end">
+        <div className="flex md:flex-row flex-col justify-between w-full md:gap-0 gap-4 md:items-end">
 
 
-            <p className="font-bold text-3xl xl:text-[55px] text-white max-w-[636px] xl:leading-[65px]">Your Live Requirement
+            <p className="font-bold text-2xl md:text-3xl xl:text-[55px] text-white md:max-w-[636px] xl:leading-[65px]">Your Live Requirement
 Preview</p>
         
 
@@ -371,21 +371,24 @@ Preview</p>
       </div>
 
       {/* Last Section */}
-      <div className="bg-[#292929] rounded-3xl shadow-Shadow2  px-4 md:px-6 lg:px-8 xl:px-12  w-full max-w-[1260px] flex  justify-between mt-[83px] ">
-        <div className="py-[63px] pl-10">
-          <p className="text-[35px] font-bold leading-10 text-white">Help us improve this page</p>
+      <div className="w-full px-4">
+
+      <div className="bg-[#292929] rounded-3xl shadow-Shadow2 md:items-start items-center md:flex-row flex-col-reverse px-4 md:px-6 lg:px-8 xl:px-12  w-full max-w-[1260px] flex  justify-between mt-[83px] ">
+        <div className="py-8 sm:py-[63px] sm:pl-10">
+          <p className="text-2xl sm:text-[35px] font-bold leading-10 text-white">Help us improve this page</p>
           <p className="text-lg leading-5 text-light_text mt-2">Appreciate what you Liked, Criticise what you didn't.</p>
           <div className="mt-[30px] max-w-[266px] rounded-xl shadow-stepShadow">
-            <button className="rounded-xl text-lg max-w-[266px] w-full  flex items-center justify-center font-medium leading-7 text-site_yellow py-[18px] shadow-Shadow2">
+            <button className="rounded-xl text-lg max-w-[266px] w-full  flex items-center justify-center font-medium leading-7 text-site_yellow py-3 sm:py-[18px] shadow-Shadow2">
             Give feedback here
             </button>
           </div>
         </div>
-        <img src="/assets/images/requirements/chat.svg" className="mr-6 mt-[-70px]" alt="" />
+        <img src="/assets/images/requirements/chat.svg" className="md:mr-6 md:max-w-max max-w-[260px] md:mt-[-70px]" alt="" />
         
 
 
       </div>
+        </div>
      
     </div>
   );
