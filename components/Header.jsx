@@ -35,7 +35,7 @@ const Header = () => {
 
                 </div>
                 <div className='flex  items-center gap-8 xl:gap-10 2xl:gap-14'>
-                    <Link className='' href={''}>
+                    <Link className='' href={'/post-service'}>
                         <button className='header-button px-6 py-4 2xl:px-6 text-site_yellow rounded-xl 2xl:py-5 font-medium text-lg leading-7'>Post requirement </button>
                     </Link>
                     <Link href={'/login'}>
@@ -63,7 +63,7 @@ const Header = () => {
                     <Link href={''}>
                         <button onClick={()=>{setToggle(false)}}  className=' text-white font-medium text-lg leading-7'> How it works </button>
                     </Link>
-                    <Link className='' href={''}>
+                    <Link className='/post-service' href={''}>
                         <button onClick={()=>{setToggle(false)}}  className=' header-button px-6 py-4 2xl:px-6 text-site_yellow  2xl:py-5 font-medium text-lg leading-7'>Post requirement </button>
                     </Link>
                     <Link href={'/login'}>

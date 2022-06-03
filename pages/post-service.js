@@ -2,7 +2,10 @@ import { useState,useEffect } from "react";
 import DragAndDrop from "../components/DragAndDrop";
 import DropDown from "../components/DropDown";
 import Deal from "../components/Landing/Deal";
-import ReqData from '../data/requirements.json'
+import Counter from "../components/Requirement/Counter";
+import ServiceFoot from "../components/Requirement/ServiceFoot";
+import Upgrade from "../components/Requirement/Upgrade";
+import ReqData from '../data/requirements.json' 
 const Index = () => {
   const [count,setCount] = useState(0)
   const [Active,setActive] = useState(true)
@@ -59,7 +62,7 @@ const Index = () => {
       </p>
       <div className="flex md:justify-start justify-center items-center mt-[70px] gap-4 md:gap-6">
         <div className="rounded-xl shadow-stepShadow">
-          <button
+          <button onClick={()=>{router.push('/post-product')}}
             className={` px-4 md:px-7 text-base md:text-lg  md:leading-7 font-medium shadow-Shadow2 py-[9px] md:py-4 ${
               false ? "border border-[#745FEA] text-[#745FEA]" : "text-white"
             } rounded-xl `}
@@ -69,7 +72,7 @@ const Index = () => {
         </div>
 
         <div className="rounded-xl shadow-stepShadow">
-          <button
+          <button onClick={()=>{router.push('/post-service')}}
             className={`px-4 md:px-7 text-base md:text-lg  md:leading-7 font-medium shadow-Shadow2 py-[9px] md:py-4 ${
               true ? "border border-[#745FEA] text-[#745FEA]" : "text-white"
             } rounded-xl `}
@@ -162,17 +165,7 @@ const Index = () => {
        <p className="mt-[30px] mb-[15px] text-base text-white  md:leading-5 md:text-xl w-full">
        Quantity
             </p>
-          <div  className="flex justify-between md:max-w-max max-w-[204px] items-center px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[18px]  shadow-input rounded-[10px] w-full " >
-            <button  type='button' onClick={()=>{setCount(count-1)}}>
-
-            <img src="/assets/images/requirements/minus.svg" alt="" />
-            </button>
-            <p>{count}</p>
-            <button type='button' onClick={()=>{setCount(count+1)}}>
-            <img src="/assets/images/requirements/plus.svg" alt="" />
-
-            </button>
-            </div>
+        <Counter setCount={setCount} count={count}/>
             
         
 
@@ -283,7 +276,7 @@ Total amount
     </p>
     <DropDown categories={Questions} />
 
-  </div>
+  </div>ServiceFoot
   <div className="w-full">
  
   <input type="text" placeholder="Enter your Question" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
@@ -305,46 +298,8 @@ Total amount
   <input type="text" placeholder="Business Name" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
 
 </div>
-<div className="mt-[68px] max-w-[1135px] w-full ">
-  <div className="flex items-center gap-[30px] ">
-    <p className="text-[22px] leading-[25px] text-white">Upgrade requirement</p>
-    <div className='w-[30px]  h-[30px] rounded-full shadow-stepShadow'><button type="button" onClick={()=>{handleRequirement(!requirement)}} className='w-[30px] flex justify-center items-center shadow-Shadow2 h-[30px] rounded-full'>
-                      <svg className={`${requirement ?'rotate-180':"rotate-0"} transition-all duration-1000 ease-in-out `} width={12} height={8} viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M10.5036 6.50031L5.8353 1.83704L1.16704 6.50031" stroke="#FFA31A" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-</svg>
-                           
+<Upgrade requirement={requirement} handleRequirement={handleRequirement}  ReqData={ReqData} toggle={toggle} handleToggle={handleToggle} />
 
-                           </button></div>
-
-  </div>
-   <div className="flex flex-col gap-[30px] mt-[30px] justify-center w-full">
-     {
-       ReqData?.map((item,index)=>{
-         return <div key={index+Math.random()} className="flex gap-5 items-end flex-col justify-center">
-
-           <div className="flex gap-[30px] items-center w-full">
-           <div className='w-[30px] h-[30px] rounded-md shadow-stepShadow'>
-        <button onClick={()=>{handleToggle(index)}} className='w-[30px] h-[30px] flex items-center justify-center rounded-md shadow-Shadow2'>
-        <svg className={`${toggle&&toggle[index]?'block':'hidden'}`} xmlns="http://www.w3.org/2000/svg" width="19.219" height="12.611" viewBox="0 0 19.219 12.611">
-  <path id="Path_5358" data-name="Path 5358" d="M2026.454,558.5l4,5,11-9" transform="translate(-2024.346 -552.389)" fill="none" stroke="#ffa31a" strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} />
-</svg>
-
-
-
-        </button>
-
-    </div>
-    <img src={`/assets/images/requirements/${item.heading}.svg`} alt="" />
-    <p className="text-xl text-white leading-[25px]">{item.money}</p>
-           </div>
-         <p className="text-lg max-w-[1075px] leading-[25px] text-light_text">{item.content}</p>
-
-         </div>
-       })
-     }
-
-   </div>
-</div>
       </form>
 
       <div className="relative  px-4 md:px-6 lg:px-8 xl:px-12  w-full max-w-[1260px] flex flex-col items-center xl:mt-[200px] mt-[130px] ">
@@ -371,24 +326,7 @@ Preview</p>
       </div>
 
       {/* Last Section */}
-      <div className="w-full px-4">
-
-      <div className="bg-[#292929] rounded-3xl shadow-Shadow2 md:items-start items-center md:flex-row flex-col-reverse px-4 md:px-6 lg:px-8 xl:px-12  w-full max-w-[1260px] flex  justify-between mt-[83px] ">
-        <div className="py-8 sm:py-[63px] sm:pl-10">
-          <p className="text-2xl sm:text-[35px] font-bold leading-10 text-white">Help us improve this page</p>
-          <p className="text-lg leading-5 text-light_text mt-2">Appreciate what you Liked, Criticise what you didn't.</p>
-          <div className="mt-[30px] max-w-[266px] rounded-xl shadow-stepShadow">
-            <button className="rounded-xl text-lg max-w-[266px] w-full  flex items-center justify-center font-medium leading-7 text-site_yellow py-3 sm:py-[18px] shadow-Shadow2">
-            Give feedback here
-            </button>
-          </div>
-        </div>
-        <img src="/assets/images/requirements/chat.svg" className="md:mr-6 md:max-w-max max-w-[260px] md:mt-[-70px]" alt="" />
-        
-
-
-      </div>
-        </div>
+    <ServiceFoot/>
      
     </div>
   );
