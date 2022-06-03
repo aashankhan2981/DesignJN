@@ -8,8 +8,8 @@ const SidePart = ({sidebarItems,toggleCheck,toggle,setToggleCheck}) => {
  <p className='text-base md:text-xl text-white leading-[30px]'>Raj L</p>
 
     </div>
-    <div  class=" form-check form-switch">
-<input style={{background:`${toggleCheck?`url('/assets/images/requirements/checkbox.svg')`:''}`}} class=" form-check-input appearance-none w-[47px] -ml-10 rounded-full float-left h-5 align-top bg-white bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm" checked={toggleCheck} onChange={(e)=>{setToggleCheck(e.target.checked);}}  type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+    <div  className=" form-check form-switch">
+<input style={{background:`${toggleCheck?`url('/assets/images/requirements/checkbox.svg')`:''}`}} className=" form-check-input appearance-none w-[47px] -ml-10 rounded-full float-left h-5 align-top bg-white bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm" checked={toggleCheck} onChange={(e)=>{setToggleCheck(e.target.checked);}}  type="checkbox" role="switch" id="flexSwitchCheckChecked" />
 </div>
 {sidebarItems?.map((item,index)=>{
 return <button className='sm:w-auto w-[33px]' key={index+Math.random()}>

@@ -292,7 +292,7 @@ Total amount
 </div>
 <div className="flex mt-24 gap-6 items-center">
 
-{/* <input class="range" type="range" name ="" value={slider} min="0" max="1000" onChange={(e)=>{setSlider(e.target.value)}} onmousemove="rangeSlide(this.value)"/> */}
+{/* <input className="range" type="range" name ="" value={slider} min="0" max="1000" onChange={(e)=>{setSlider(e.target.value)}} onmousemove="rangeSlide(this.value)"/> */}
 <div className="relative  child max-w-[100px]">
 	<input type="range" max="100" min="0"   id="range" onChange={(e)=>{setSlider(e.target.value)}} value={slider}/>
 	</div>
