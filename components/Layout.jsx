@@ -28,7 +28,7 @@ const Layout = ({children}) => {
         :<div className='flex justify-between w-full'>
        
          
-         <Sidebar children={children}/>
+         <Sidebar >{children}</Sidebar>
         </div>
          }
         
