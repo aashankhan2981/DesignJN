@@ -6,12 +6,16 @@ import Counter from "../components/Requirement/Counter";
 import ServiceFoot from "../components/Requirement/ServiceFoot";
 import Upgrade from "../components/Requirement/Upgrade";
 import ReqData from '../data/requirements.json' 
+import { useRouter } from "next/router";
+
 const Index = () => {
   const [count,setCount] = useState(0)
   const [Active,setActive] = useState(true)
   const [slider,setSlider] = useState(100)
   const [toggle,setToggle] = useState([])
   const [toggle2,setToggle2] = useState(false)
+  const router  =useRouter()
+
   useEffect(()=>{
       let temp = []
       ReqData.map(()=>{
@@ -276,7 +280,7 @@ Total amount
     </p>
     <DropDown categories={Questions} />
 
-  </div>ServiceFoot
+  </div>
   <div className="w-full">
  
   <input type="text" placeholder="Enter your Question" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />

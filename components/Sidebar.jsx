@@ -40,8 +40,8 @@ if(value.length!=0) {
       <div className='w-full'>
 
       <div className='sticky top-0 z-50 w-full'>
-        <div className=' bg-site_black z-[60] 2xl:gap-10 relative max-w-[1920px] w-full md:pr-8 pr-6 lg:pr-14 xl:pr-[40px] gap-6 2xl:pr-[150px] hidden xl:flex justify-start items-center h-[90px] xl:h-[120px]'>
-        <div className='flex  2xl:gap-5 gap-3  items-center'>
+        <div className=' bg-site_black z-[60] 2xl:gap-10 relative max-w-[1920px] w-full md:pr-8 pr-6 lg:pr-14 xl:pr-[40px] gap-6 3xl:pr-[150px] hidden xl:flex justify-start items-center h-[90px] xl:h-[120px]'>
+        <div className='flex  3xl:gap-5 gap-3  items-center'>
 
 <Image src={Bars} />
 <Link href={'/'}>
@@ -51,24 +51,24 @@ if(value.length!=0) {
     </button>
 </Link>
 </div>
-<div className='flex justify-between items-center  shadow-input rounded-[10px] gap-4 pl-5 bg-site_black w-full xl:max-w-[300px] 2xl:max-w-[400px] 3xl:max-w-[540px]'>
+<div className='flex justify-between items-center  shadow-input rounded-[10px] gap-4 pl-5 bg-site_black w-full xl:max-w-[300px] 3xl:max-w-[400px] 3xl:max-w-[540px]'>
 
 <img src="/assets/images/requirements/searchbar.svg" alt="monkey" />
 <input onChange={handleChange} type="text" required placeholder="Mobile Recharge" className="  rounded-l-[10px] text-[15px] leading-[18px]  py-[22px] outline-none text-light_text bg-transparent  h-full w-full" />
 
 </div>
                     <Link href={''}>
-                        <button className='text-white font-medium text-base 2xl:text-lg 2xl:leading-7'> <svg xmlns="http://www.w3.org/2000/svg" width={26} height={26} viewBox="0 0 26 26">
+                        <button className='text-white font-medium text-base 3xl:text-lg 3xl:leading-7'> <svg xmlns="http://www.w3.org/2000/svg" width={26} height={26} viewBox="0 0 26 26">
   <path id="Path_5446" data-name="Path 5446" d="M15,2A13,13,0,1,0,28,15,13,13,0,0,0,15,2Zm1.3,23.309V24.1a1.3,1.3,0,0,0-2.6,0v1.209A10.4,10.4,0,0,1,4.691,16.3H5.9a1.3,1.3,0,0,0,0-2.6H4.691A10.4,10.4,0,0,1,13.7,4.691V5.9a1.3,1.3,0,0,0,2.6,0V4.691A10.4,10.4,0,0,1,25.309,13.7H24.1a1.3,1.3,0,0,0,0,2.6h1.209A10.4,10.4,0,0,1,16.3,25.309ZM19.082,9.215l-6.5,2.756a1.3,1.3,0,0,0-.676.676l-2.756,6.5a1.309,1.309,0,0,0,1.183,1.82,1.209,1.209,0,0,0,.52-.117l6.5-2.756a1.3,1.3,0,0,0,.676-.676l2.756-6.5a1.3,1.3,0,0,0-1.7-1.7Zm-3.237,6.63-2.964,1.3,1.3-2.964,2.964-1.3Z" transform="translate(-2 -2)" fill="#fff" />
 </svg>
 
  </button>
                     </Link>
                     <Link href={''}>
-                        <button className='text-white 2xl:w-auto w-[80px]   font-medium text-base 2xl:text-lg 2xl:leading-7'> Create gig </button>
+                        <button className='text-white 3xl:max-w-max max-w-[94px] 3xl:w-auto w-full   font-medium text-base 3xl:text-lg 3xl:leading-7'> Create gig </button>
                     </Link>
                     <Link className='' href={''}>
-                        <button className='header-button px-[10px] w-[160px] 2xl:w-auto  py-4 2xl:px-6 text-site_yellow rounded-xl 2xl:py-5 font-medium text-base 2xl:text-lg 2xl:leading-7'>Post requirement </button>
+                        <button className='header-button px-[10px] w-[160px] 3xl:w-auto  py-4 3xl:px-6 text-site_yellow rounded-xl 3xl:py-5 font-medium text-base 3xl:text-lg 3xl:leading-7'>Post requirement </button>
                     </Link>
                     <div className='max-w-[81px] flex  gap-1 items-center w-full'>
                    <svg xmlns="http://www.w3.org/2000/svg" width="36.297" height="30.064" viewBox="0 0 36.297 30.064">
@@ -113,7 +113,7 @@ if(value.length!=0) {
   </g>
 </svg>
 <div>
-  <p className='text-xl 2xl:text-2xl text-white 2xl:leading-[30px]'>Raj L</p>
+  <p className='text-xl 3xl:text-2xl text-white 3xl:leading-[30px]'>Raj L</p>
   <p className='text-white text-[11px]'>Free Member</p>
 </div>
 
@@ -164,7 +164,7 @@ if(value.length!=0) {
             </button>
           <div className='flex w-full mt-7 justify-center'>
 
-        <div className='flex justify-between items-center  shadow-input rounded-[10px] gap-4 pl-5 bg-site_black max-w-[540px] w-full xl:max-w-[300px] 2xl:max-w-[400px] 3xl:max-w-[540px]'>
+        <div className='flex justify-between items-center  shadow-input rounded-[10px] gap-4 pl-5 bg-site_black max-w-[540px] w-full xl:max-w-[300px] 3xl:max-w-[400px] 3xl:max-w-[540px]'>
 
 <img className='w-[18px]' src="/assets/images/requirements/searchbar.svg" alt="monkey" />
 <input onChange={handleChange} type="text" required placeholder="Mobile Recharge" className="  rounded-l-[10px] text-sm md:text-[15px]  md:leading-[18px] py-3 md:py-[22px] outline-none text-light_text bg-transparent  h-full w-full" />
@@ -175,7 +175,7 @@ if(value.length!=0) {
 <div className='flex justify-center items-center gap-4'>
 
                     <Link href={''}>
-                        <button className='text-white font-medium text-base 2xl:text-lg 2xl:leading-7'> <svg className='md:w-auto w-[18px]' xmlns="http://www.w3.org/2000/svg" width={26} height={26} viewBox="0 0 26 26">
+                        <button className='text-white font-medium text-base 3xl:text-lg 3xl:leading-7'> <svg className='md:w-auto w-[18px]' xmlns="http://www.w3.org/2000/svg" width={26} height={26} viewBox="0 0 26 26">
   <path id="Path_5446" data-name="Path 5446" d="M15,2A13,13,0,1,0,28,15,13,13,0,0,0,15,2Zm1.3,23.309V24.1a1.3,1.3,0,0,0-2.6,0v1.209A10.4,10.4,0,0,1,4.691,16.3H5.9a1.3,1.3,0,0,0,0-2.6H4.691A10.4,10.4,0,0,1,13.7,4.691V5.9a1.3,1.3,0,0,0,2.6,0V4.691A10.4,10.4,0,0,1,25.309,13.7H24.1a1.3,1.3,0,0,0,0,2.6h1.209A10.4,10.4,0,0,1,16.3,25.309ZM19.082,9.215l-6.5,2.756a1.3,1.3,0,0,0-.676.676l-2.756,6.5a1.309,1.309,0,0,0,1.183,1.82,1.209,1.209,0,0,0,.52-.117l6.5-2.756a1.3,1.3,0,0,0,.676-.676l2.756-6.5a1.3,1.3,0,0,0-1.7-1.7Zm-3.237,6.63-2.964,1.3,1.3-2.964,2.964-1.3Z" transform="translate(-2 -2)" fill="#fff" />
 </svg>
 
@@ -190,7 +190,7 @@ if(value.length!=0) {
                     <Link  href={''}>
                       <div className='flex w-full justify-center'>
 
-                        <button className='header-button px-2  md:px-[10px]  w-full max-w-[540px]  py-3 md:py-4  text-site_yellow rounded-xl 2xl:py-5 font-medium text-base 2xl:text-lg 2xl:leading-7'>Post requirement </button>
+                        <button className='header-button px-2  md:px-[10px]  w-full max-w-[540px]  py-3 md:py-4  text-site_yellow rounded-xl 3xl:py-5 font-medium text-base 3xl:text-lg 3xl:leading-7'>Post requirement </button>
                       </div>
                     </Link>
                     <div className='w-full flex items-center mt-4 justify-center'>
@@ -238,7 +238,7 @@ if(value.length!=0) {
   </g>
 </svg>
 <div>
-  <p className='text-base md:text-xl text-center md:text-left 2xl:text-2xl text-white 2xl:leading-[30px]'>Raj L</p>
+  <p className='text-base md:text-xl text-center md:text-left 3xl:text-2xl text-white 3xl:leading-[30px]'>Raj L</p>
   <p className='text-white text-[11px] text-center md:text-left'>Free Member</p>
 </div>
 

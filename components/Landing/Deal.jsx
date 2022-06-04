@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Deal = () => {
+const Deal = ({cart}) => {
   return (
     <div className="rounded-[30px] shadow-stepShadow">
     <div className="rounded-[30px] p-5 sm:p-[30px] shadow-Shadow2 ">
@@ -103,7 +103,9 @@ at 500₹ off</p>
     </div>
 
   </div>
+  
   )
 }
 
 export default Deal
+

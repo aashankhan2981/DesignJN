@@ -8,13 +8,27 @@ import ReqData from '../data/requirements.json'
 import { useRouter } from "next/router";
 import Calender from "../components/Calender";
 import Counter from "../components/Requirement/Counter";
+import Checkbox from "../components/Checkbox";
 
 const Index = () => {
   const [count,setCount] = useState(0)
+  const [quantity,setQuantity] = useState(1)
   const [Active,setActive] = useState(true)
+  const [Accept,setAccept] = useState(false)
+  const [SwitchDiscount,setSwitchDiscount] = useState(false)
   const [slider,setSlider] = useState(100)
   const [toggle,setToggle] = useState([])
+  const [toggleCheckBox,setToggleCheckBox] = useState([{key:'discount',value:'Discount',toggle:false},{key:'cashback',value:'Cashback',toggle:false},{key:'coupon',value:'Coupon',toggle:false}])
   const [toggle2,setToggle2] = useState(false)
+  
+
+  const [Discount, setDiscount] = useState(typeof Number);
+  const [DiscountPrice, setDiscountPrice] = useState(typeof Number);
+
+  const handleMax = (event,min,max,setState) => {
+    const value = Math.max(min, Math.min(max, Number(event.target.value)));
+    setState(value);
+  };
   const router  =useRouter()
   useEffect(()=>{
       let temp = []
@@ -25,10 +39,29 @@ const Index = () => {
       setToggle(temp)
  
   },[ReqData])
-  const handleToggle = (index) =>{
-      let temp = toggle
-      
-     temp = temp.map((item,i)=>{
+  const handleToggle = (index,checkbox) =>{
+    let temp
+      if(checkbox){
+         temp = toggleCheckBox
+         temp = temp.map((item,i)=>{
+          if(index==item.key){
+            return  {...item,toggle:!item.toggle}
+
+          }
+          else{
+              return  {...item,toggle:false}
+          }
+          
+
+      })
+      setToggleCheckBox(temp)
+
+
+      }
+      else{
+        temp = toggle
+
+        temp = temp.map((item,i)=>{
           if(index==i){
               return !item
           }
@@ -38,8 +71,11 @@ const Index = () => {
           
 
       })
-      console.log(temp)
       setToggle(temp)
+      }
+      
+    
+    
       setToggle2(!toggle2)
   }
   const [requirement,handleRequirement] = useState(false)
@@ -59,7 +95,7 @@ const Index = () => {
         
       ];
       const Questions = [
-        { value: "0", content: "Other" },
+        { value: "0", content: "--select--" },
         { value: "1", content: "Is it Secure" },
         { value: "2", content: "Any problem?" },
         { value: "3", content: "Issue?" },
@@ -117,23 +153,23 @@ const Index = () => {
             Availability
             </p>
           
-            <div className="flex justify-between items-center ">
+            <div className="flex justify-between gap-6 md:flex-nowrap flex-wrap items-center ">
 
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-3 md:gap-5">
 
                     <input name="availability" type="radio" className="radio appearance-none  text-[#FFA31A] " />
                     <p className= "text-lg md:leading-[25px] text-white md:text-xl">Now</p>
 
                 </div>
 
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-3 md:gap-5">
 
 <input name="availability" type="radio" className="radio appearance-none  text-[#FFA31A] " />
 <p className= "text-lg md:leading-[25px] text-white md:text-xl">Hide & Seek </p>
 
 </div>
 
-<div className="flex items-center gap-5">
+<div className="flex items-center gap-3 md:gap-5">
 
 <input name="availability" type="radio" className="radio appearance-none  text-[#FFA31A] " />
 <p className= "text-lg md:leading-[25px] text-white md:text-xl">Later</p>
@@ -178,7 +214,7 @@ const Index = () => {
             </div>
 
           </div>
-
+          <div className="rounded-md shadow-stepShadow">
           <div className="px-3 py-5 rounded-md shadow-Shadow2 md:py-6 xl:py-10 md:px-5 xl:px-[30px] ">
    <p className="lg:text-3xl mb-[40px] xl:mb-[50px] 2xl:mb-[70px] text-center w-full text-2xl  xl:text-4xl font-bold text-white xl:leading-[50px]">Main Product Details</p>
    <div >
@@ -198,7 +234,7 @@ const Index = () => {
        
       </div>
    </div>
-   <div className="flex  xl:gap-10 lg:gap-6 gap-5 mt-[40px] xl:mt-[50px] 2xl:mt-[70px] items-end">
+   <div className="flex md:flex-row flex-col xl:gap-10 lg:gap-6 gap-5 mt-[40px] xl:mt-[50px] 2xl:mt-[70px] md:items-end">
         <div className="max-w-[504px] flex flex-col gap-[30px] w-full">
         <div  >
    <p className="mb-[15px] text-base text-white  md:leading-5 md:text-xl w-full">
@@ -254,7 +290,7 @@ const Index = () => {
             <Counter width={'w-[30%]'} setCount={setCount} count={count} />
   
    </div>
-   <div className="text-lg flex gap-3 pb-4 md:text-xl xl:text-2xl text-white">
+   <div className="text-base sm:text-lg flex gap-3 pb-4 md:text-xl xl:text-2xl text-white">
        <p>Subtotal:</p>
        <p className="text-light_text">₹500</p>
    </div>
@@ -266,18 +302,20 @@ const Index = () => {
    </div>
   
           </div>
+          </div>
+         
           {/* New section */}
         
      
 
    
-        <div className="flex justify-between  mt-[30px] w-full">
-        <div className="text-lg lg:text-xl xl:text-2xl text-white flex items-center max-w-[286px] justify-between gap-4 xl:leading-[30px]">
+        <div className="flex gap-8 sm:gap-4 sm:flex-row flex-col justify-end sm:justify-between  mt-[30px] w-full">
+        <div className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white flex items-center sm:max-w-[286px] justify-between gap-4 xl:leading-[30px]">
             <p>Cart Amount:</p>
                 <p className="text-[#15D807]">₹16000</p>
         </div>
-        <div className="max-w-[266px] w-full shadow-stepShadow  rounded-xl">
-          <button className="text-lg rounded-xl font-medium leading-[27px] text-center p-2 md:p-4 max-w-[266px] w-full text-white shadow-Shadow2">
+        <div className="sm:max-w-[266px] w-full shadow-stepShadow  rounded-xl">
+          <button className="text-base sm:text-lg rounded-xl font-medium leading-[27px] text-center p-2 md:p-4 sm:max-w-[266px] w-full text-white shadow-Shadow2">
           +Add sub product
           </button>
         </div>
@@ -285,31 +323,24 @@ const Index = () => {
         {/* delivery address */}
         <div className="mt-[40px] xl:mt-[50px] 2xl:mt-[70px] ">
             <p className="text-lg lg:text-xl lg:leading-[25px] text-white">Select address for Delivery</p>
-            <div className=" grid gap-8 xl:gap-10 mt-[30px] grid-cols-2  ">
+            <div className=" grid gap-8 xl:gap-10 mt-[30px] grid-cols-1 md:grid-cols-2  ">
 
             <div className="rounded-[30px] shadow-stepShadow">
-    <div className="rounded-[30px] p-5 sm:p-[30px] shadow-Shadow2 ">
+    <div className="rounded-[30px] px-4 sm:px-5 py-[30px] lg:px-[30px] shadow-Shadow2 ">
       <div className="relative flex items-start justify-between">
       
 <div className="flex gap-4 md:gap-5 items-s">
     <div className="leading-[30px] mt-2">
-    <svg xmlns="http://www.w3.org/2000/svg" width={18} height={18} viewBox="0 0 18 18">
-  <g id="Group_591" data-name="Group 591" transform="translate(-246 -1902)">
-    <circle id="Ellipse_390" data-name="Ellipse 390" cx={6} cy={6} r={6} transform="translate(249 1905)" fill="#fff" />
-    <g id="Ellipse_391" data-name="Ellipse 391" transform="translate(246 1902)" fill="none" stroke="#fff" strokeWidth={1}>
-      <circle cx={9} cy={9} r={9} stroke="none" />
-      <circle cx={9} cy={9} r="8.5" fill="none" />
-    </g>
-  </g>
-</svg>
+    <input name="address" type="radio" className="radio appearance-none  text-[#FFA31A] " />
+
     </div>
 
 <div>
 
-        <p className="text-2xl  leading-[30px] font-bold text-white">Set as default address</p>
+        <p className="lg:text-2xl  text-xl lg:leading-[30px] font-bold text-white">Set as default address</p>
         <div className="mt-[30px] ">
          <p className="text-lg md:text-lg text-site_yellow leading-[25px]">Home</p>
-         <p className= "text-base md:leading-[25px] text-light_text max-w-[389px] md:text-lg ">Raj Lodhi 9876543210 H no. 26, Vrindavan
+         <p className= "text-base md:leading-[25px] text-light_text lg:max-w-[389px] md:text-lg ">Raj Lodhi 9876543210 H no. 26, Vrindavan
 Dham Colony, Mayur Vihar, Ashoka Garden,
 462001, Bhopal, Madhya Pradesh </p>  
        
@@ -364,21 +395,210 @@ Dham Colony, Mayur Vihar, Ashoka Garden,
             </div>
 
         </div>
-        <div className="w-full max-w-[540px]">
+  
 
-<p className="mt-[20px] mb-[15px] text-base text-white  md:leading-5 md:text-xl w-full">
-Total amount 
-    </p>
-    <div className="flex gap-3 items-center px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black  py-[15px] shadow-input rounded-[10px] w-full max-w-[540px]">
-   <svg xmlns="http://www.w3.org/2000/svg" width={12} height={25} viewBox="0 0 12 25">
-<text id="_" data-name="₹" transform="translate(0 19)" fill="#fff" fontSize={18} fontFamily="Poppins-Regular, Poppins"><tspan x={0} y={0}>₹</tspan></text>
+<div className="first-input max-w-[1110px] gap-5 md:flex-row flex-col mt-[30px] w-full flex justify-between items-end">
+  <div className="w-full">
+ 
+  <input type="text" placeholder="Name on order" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
+
+
+  </div>
+  <div className="w-full">
+ 
+  <input type="text" placeholder="Mobile number" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
+
+  </div>
+</div>
+<div className="max-w-[1110px] gap-5 md:flex-row flex-col mt-5 md:mt-[30px] w-full flex justify-between items-end">
+  <div className="w-full">
+ 
+  <input type="text" placeholder="Address line 1" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
+
+
+  </div>
+  <div className="w-full">
+ 
+
+  </div>
+</div>
+<div className="max-w-[1110px] gap-5 md:flex-row flex-col mt-5 md:mt-[30px] w-full flex justify-between items-end">
+  <div className="w-full">
+ 
+  <input type="text" placeholder="Address line 2" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
+
+
+  </div>
+  <div className="w-full">
+ 
+
+  </div>
+</div>
+<div className="second-last max-w-[1110px] gap-5 md:flex-row flex-col mt-5 md:mt-[30px] w-full flex justify-between items-end">
+  <div className="w-full">
+ 
+  <input type="text" placeholder="Pincode" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
+
+
+  </div>
+  <div className="w-full">
+ 
+  <input type="text" placeholder="City & state" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
+
+  </div>
+</div>
+<div className="last-input max-w-[1110px] gap-5 md:flex-row flex-col mt-5 md:mt-[30px] w-full flex justify-between items-center">
+  <div className="w-full">
+ 
+  <input type="text" placeholder="Landmark" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
+
+
+  </div>
+  <div className="w-full">
+  <div className="flex md:justify-start justify-center gap-[10px] items-center">
+          <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width={34} height={34} viewBox="0 0 34 34">
+  <g id="edit-2">
+    <rect id="Rectangle_167" data-name="Rectangle 167" width={34} height={34} fill="#ffa31a" opacity={0} />
+    <path id="Path_5405" data-name="Path 5405" d="M25.252,27.476H5.418a1.417,1.417,0,0,0,0,2.833H25.252a1.417,1.417,0,0,0,0-2.833ZM5.418,24.643h.128l5.907-.538a2.833,2.833,0,0,0,1.714-.808l12.75-12.75a2.72,2.72,0,0,0-.1-3.839L21.937,2.826a2.833,2.833,0,0,0-3.768-.1L5.418,15.477a2.833,2.833,0,0,0-.807,1.714L4,23.1a1.413,1.413,0,0,0,1.417,1.544ZM19.968,4.809l3.868,3.867L21,11.439l-3.8-3.8Z" transform="translate(2.004 0.857)" fill="#ffa31a" />
+  </g>
 </svg>
+<p className="text-[15px] leading-[18px] text-site_yellow ">Add note</p>
 
 
-    <input type="number" placeholder="" className=" pr-3  outline-none bg-transparent rounded-l-[10px] py-[5px]  w-full " />
-    
-   
+
+           </div>
+ 
+
+  </div>
+</div>
+<div className="mt-[55px] sm:flex-row flex-col  max-w-[542px] w-full flex justify-between gap-4 items-start">
+  <div className="max-w-[256px] w-full">
+  <p className="mb-5 text-base text-white  md:leading-5 md:text-xl w-full">
+  Payment method
+    </p>
+    <div className="flex justify-between w-full gap-5">
+    <div className="flex items-center gap-5">
+
+<input name="method" type="radio" className="radio appearance-none  text-[#FFA31A] " />
+<p className= "text-lg md:leading-[25px] text-white md:text-xl">COD</p>
+
+</div> 
+ <div className="flex items-center gap-5">
+
+<input name="method" type="radio" className="radio appearance-none  text-[#FFA31A] " />
+<p className= "text-lg md:leading-[25px] text-white md:text-xl">Prepaid</p>
+
+</div>
     </div>
+  
+  </div>
+  <div className=" w-full max-w-[204px]">
+  <p className="mb-5 text-base text-white  md:leading-5 md:text-xl w-full">
+  Quantity
+    </p>
+ <Counter count={quantity} setCount={setQuantity} />
+  
+  </div>
+
+</div>
+
+<div className="mt-[70px]  max-w-[589px] w-full ">
+<p className="mb-5 text-base text-white  md:leading-5 md:text-xl w-full">
+Add offer
+    </p>
+    <div className="flex sm:flex-nowrap flex-wrap gap-6 items-center justify-between">
+    {toggleCheckBox?.map((item)=>{
+     return  <div key={item.key} className="max-w-[146px] w-full flex gap-6 justify-between items-center">
+<p className= "text-base sm:text-lg md:leading-[25px] text-white md:text-xl">{item.value}</p>
+
+
+       <Checkbox item={item} handleToggle={handleToggle}  />
+      </div>
+    })
+    }
+    </div>
+
+</div>
+<div className="mt-8 hidden md:flex items-center gap-1 text-lg md:text-xl md:leading-[25px] text-white">
+<div className="w-[32px] relative">
+
+<input onChange={(e)=>{handleMax(e,0,100,setDiscount)}} value={Discount} type="number" className=" appearance-none outline-none bg-transparent w-[37px] " name="" id="" />
+<div className="absolute justify-between flex w-full bottom-0">
+<div className="bg-white w-[8px] h-[2px]  bottom-0"></div>
+<div className="bg-white w-[8px] h-[2px]  bottom-0"></div>
+<div className="bg-white w-[8px] h-[2px]  bottom-0"></div>
+
+</div>
+</div>
+<p>% Upto </p>
+<div className="w-[37px] relative">
+
+<input onChange={(e)=>{handleMax(e,0,999,setDiscountPrice)}} value={DiscountPrice} type="number" className=" appearance-none outline-none bg-transparent w-[37px] " name="" id="" />
+<div className="absolute justify-between flex w-full bottom-0">
+<div className="bg-white w-[8px] h-[2px]  bottom-0"></div>
+<div className="bg-white w-[8px] h-[2px]  bottom-0"></div>
+<div className="bg-white w-[8px] h-[2px]  bottom-0"></div>
+
+</div>
+</div>
+<p>₹ Discount on  Select</p>
+<img src="/assets/images/requirements/triangle.svg" alt="" />
+<p className="ml-4">bank Debit</p>
+<img src="/assets/images/requirements/triangle.svg" alt="" />
+<p className="ml-4">Card</p>
+
+</div>
+
+
+<div className="mt-8 flex flex-col md:hidden items-start gap-5 text-base  text-white">
+  <div className="flex gap-1">
+  <div className="w-[32px] relative">
+
+<input onChange={(e)=>{handleMax(e,0,100,setDiscount)}} value={Discount} type="number" className=" appearance-none outline-none bg-transparent w-[37px] " name="" id="" />
+<div className="absolute justify-between flex w-full bottom-0">
+<div className="bg-white w-[8px] h-[2px]  bottom-0"></div>
+<div className="bg-white w-[8px] h-[2px]  bottom-0"></div>
+<div className="bg-white w-[8px] h-[2px]  bottom-0"></div>
+
+</div>
+</div>
+<p>% Upto </p>
+<div className="w-[37px] relative">
+
+<input onChange={(e)=>{handleMax(e,0,999,setDiscountPrice)}} value={DiscountPrice} type="number" className=" appearance-none outline-none bg-transparent w-[37px] " name="" id="" />
+<div className="absolute justify-between flex w-full bottom-0">
+<div className="bg-white w-[8px] h-[2px]  bottom-0"></div>
+<div className="bg-white w-[8px] h-[2px]  bottom-0"></div>
+<div className="bg-white w-[8px] h-[2px]  bottom-0"></div>
+
+</div>
+</div>
+<p>₹</p>
+  </div>
+<div className="flex gap-1 flex-wrap">
+  <div className="flex gap-1">
+
+<p> Discount on  Select</p>
+<img src="/assets/images/requirements/triangle.svg" alt="" />
+  </div>
+  <div className="flex gap-1">
+
+<p className="ml-4">bank Debit</p>
+<img src="/assets/images/requirements/triangle.svg" alt="" />
+  </div>
+<p className="ml-4">Card</p>
+</div>
+
+
+</div>
+
+
+
+
+<div className="w-full max-w-[540px]">
+
+
+  
     <div className="mt-[70px] sm:flex-row gap-4 flex-col flex justify-between items-center">
       <div onClick={()=>{setActive(true)}} className="shadow-stepShadow rounded-xl w-full  max-w-[200px]">
       <div className={`shadow-Shadow2 ${Active&& "border border-site_yellow"} flex flex-col justify-center items-center h-[150px] text-xl text-white leading-[25px] gap-[10px] rounded-xl w-full max-w-[200px]`}>
@@ -404,7 +624,7 @@ Total amount
 <div className="max-w-[1110px] gap-5 md:flex-row flex-col   mt-[70px] w-full flex justify-between items-center md:items-end">
   <div className="w-full">
   <p className=" mb-[15px] text-base text-white  md:leading-5 md:text-xl w-full">
-Total amount 
+  Enter your buying rate
     </p>
     <div className="flex gap-3 items-center px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black  py-[15px] shadow-input rounded-[10px] w-full max-w-[540px]">
    <svg xmlns="http://www.w3.org/2000/svg" width={12} height={25} viewBox="0 0 12 25">
@@ -422,35 +642,108 @@ Total amount
   <p className=" mb-[15px] text-base text-white  md:leading-5 md:text-xl w-full">
   Enter desired Discount in %/ ₹ here 
     </p>
-    <div className="flex gap-3 items-center px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black  py-[15px] shadow-input rounded-[10px] w-full max-w-[540px]">
-  <svg xmlns="http://www.w3.org/2000/svg" width={37} height={18} viewBox="0 0 37 18">
+  {  SwitchDiscount? 
+   <div className="flex gap-3 items-center px-4 xl:px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black  py-[15px] shadow-input rounded-[10px] w-full max-w-[540px]">
+       <svg xmlns="http://www.w3.org/2000/svg" width={37} height={18} viewBox="0 0 37 18">
   <g id="Group_777" data-name="Group 777" transform="translate(-49 -144)">
     <rect id="Rectangle_176" data-name="Rectangle 176" width={31} height={14} rx={7} transform="translate(49 146)" fill="#ffa31a" />
     <circle id="Ellipse_400" data-name="Ellipse 400" cx={9} cy={9} r={9} transform="translate(68 144)" fill="#292929" />
     <path id="Path_14043" data-name="Path 14043" d="M12.036,7.75H8.821V4.536a.536.536,0,1,0-1.071,0V7.75H4.536a.536.536,0,1,0,0,1.071H7.75v3.214a.536.536,0,0,0,1.071,0V8.821h3.214a.536.536,0,0,0,0-1.071Z" transform="translate(68.715 144.714)" fill="gray" />
   </g>
 </svg>
-
-
-
-
-    <input type="number" placeholder="" className=" pr-3  outline-none bg-transparent rounded-l-[10px] py-[5px] max-w-[120px]  w-full " />
-    <div className="flex gap-5 items-center">
+     <div className="flex w-full gap-4 xl:gap-5 justify-end items-center">
     <p className="text-lg leading-[18px]">%</p>
-    <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width={28} height={28} viewBox="0 0 28 28">
+    <svg className="w-[28px]" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width={28} height={28} viewBox="0 0 28 28">
   <g id="swap">
     <rect id="Rectangle_175" data-name="Rectangle 175" width={28} height={28} transform="translate(0 28) rotate(-90)" fill="#ffa31a" opacity={0} />
     <path id="Path_5449" data-name="Path 5449" d="M4.222,10.177H20.111l-1.956,1.482a1.244,1.244,0,0,0-.244,1.729,1.213,1.213,0,0,0,1.711.247L24.511,9.93a1.243,1.243,0,0,0,0-1.964L19.793,4.26a1.215,1.215,0,0,0-1.717.216,1.246,1.246,0,0,0,.214,1.736l1.919,1.495H4.222a1.235,1.235,0,0,0,0,2.471Zm19.556,8.647H7.889l1.956-1.482a1.244,1.244,0,0,0,.244-1.729,1.214,1.214,0,0,0-1.711-.247L3.489,19.071a1.243,1.243,0,0,0,0,1.964l4.718,3.706a1.205,1.205,0,0,0,1.711-.222,1.244,1.244,0,0,0-.208-1.729L7.791,21.294H23.778a1.235,1.235,0,0,0,0-2.471Z" transform="translate(0)" fill="#ffa31a" />
   </g>
 </svg>
-<input type="number" placeholder="" className=" pr-3  outline-none bg-transparent rounded-l-[10px] py-[5px] max-w-[120px]  w-full " />
+<input type="number" placeholder="" className=" pr-3  outline-none bg-transparent rounded-l-[10px] py-[5px] max-w-[50px] xl:max-w-[120px]  w-full " />
 <p className="text-lg leading-[18px]">₹</p>
 
 
     </div>
+  
+
+
+
+
+    <input type="number" placeholder="" className=" pr-3  outline-none bg-transparent rounded-l-[10px] py-[5px] max-w-[50px] xl:max-w-[120px]  w-full " />
+
+   
+    </div>:
+    <div className="flex gap-3 items-center px-4 xl:px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black  py-[15px] shadow-input rounded-[10px] w-full max-w-[540px]">
+    <svg xmlns="http://www.w3.org/2000/svg" width={37} height={18} viewBox="0 0 37 18">
+    <g id="Group_777" data-name="Group 777" transform="translate(-49 -144)">
+      <rect id="Rectangle_176" data-name="Rectangle 176" width={31} height={14} rx={7} transform="translate(49 146)" fill="#ffa31a" />
+      <circle id="Ellipse_400" data-name="Ellipse 400" cx={9} cy={9} r={9} transform="translate(68 144)" fill="#292929" />
+      <path id="Path_14043" data-name="Path 14043" d="M12.036,7.75H8.821V4.536a.536.536,0,1,0-1.071,0V7.75H4.536a.536.536,0,1,0,0,1.071H7.75v3.214a.536.536,0,0,0,1.071,0V8.821h3.214a.536.536,0,0,0,0-1.071Z" transform="translate(68.715 144.714)" fill="gray" />
+    </g>
+  </svg>
+  
+  
+  
+  
+      <input type="number" placeholder="" className=" pr-3  outline-none bg-transparent rounded-l-[10px] py-[5px] max-w-[50px] xl:max-w-[120px]  w-full " />
+      <div className="flex w-full gap-4 xl:gap-5 justify-end items-center">
+      <p className="text-lg leading-[18px]">%</p>
+      <svg className="w-[28px]" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width={28} height={28} viewBox="0 0 28 28">
+    <g id="swap">
+      <rect id="Rectangle_175" data-name="Rectangle 175" width={28} height={28} transform="translate(0 28) rotate(-90)" fill="#ffa31a" opacity={0} />
+      <path id="Path_5449" data-name="Path 5449" d="M4.222,10.177H20.111l-1.956,1.482a1.244,1.244,0,0,0-.244,1.729,1.213,1.213,0,0,0,1.711.247L24.511,9.93a1.243,1.243,0,0,0,0-1.964L19.793,4.26a1.215,1.215,0,0,0-1.717.216,1.246,1.246,0,0,0,.214,1.736l1.919,1.495H4.222a1.235,1.235,0,0,0,0,2.471Zm19.556,8.647H7.889l1.956-1.482a1.244,1.244,0,0,0,.244-1.729,1.214,1.214,0,0,0-1.711-.247L3.489,19.071a1.243,1.243,0,0,0,0,1.964l4.718,3.706a1.205,1.205,0,0,0,1.711-.222,1.244,1.244,0,0,0-.208-1.729L7.791,21.294H23.778a1.235,1.235,0,0,0,0-2.471Z" transform="translate(0)" fill="#ffa31a" />
+    </g>
+  </svg>
+  <input type="number" placeholder="" className=" pr-3  outline-none bg-transparent rounded-l-[10px] py-[5px] max-w-[50px] xl:max-w-[120px]  w-full " />
+  <p className="text-lg leading-[18px]">₹</p>
+  
+  
+      </div>
+     
+      </div>}
+  </div>
+</div>
+<div className="max-w-[1110px] gap-5 md:flex-row flex-col mt-[30px] w-full flex justify-between items-cemter">
+<p className="text-light_text text-base sm:text-lg md:text-xl md:leading-6">You have to deposit <span className="text-white text-lg sm:text-xl md:text-2xl "> ₹14400</span></p>
+<div className="flex justify-between max-w-[239px] w-full items-center gap-4">
+<svg xmlns="http://www.w3.org/2000/svg" width="33.552" height={33} viewBox="0 0 33.552 33">
+  <path id="Path_14185" data-name="Path 14185" d="M31.358,10.1H5.145V9.051L28.212,7.205V9.051h3.145V5.905a3.542,3.542,0,0,0-4.15-3.6L6.152,5.312A5,5,0,0,0,2,10.1v20.97a4.194,4.194,0,0,0,4.194,4.194H31.358a4.194,4.194,0,0,0,4.194-4.194V14.293A4.194,4.194,0,0,0,31.358,10.1ZM28.212,24.791a3.147,3.147,0,1,1,3.148-3.145,3.147,3.147,0,0,1-3.148,3.145Z" transform="translate(-2 -2.263)" fill="#fff" />
+</svg>
+<p className="text-white text-base sm:text-lg md:text-xl md:leading-6">Available : ₹20000</p>
+
+</div>
+</div>
+<div className="max-w-[795px] w-full flex-col md:flex-row flex justify-between gap-4 md:items-center mt-10">
+  <div className="flex   md:justify-between gap-5 md:gap-3 lg:gap-4 items-center w-full max-w-[390px]">
+    <Checkbox state={Accept} single={true} handleToggle={setAccept} />
+    <p className="text-white text-base sm:text-lg md:text-xl md:leading-6">Auto accept bid if value between</p>
+  </div>
+  <div className="flex justify-between w-full items-center max-w-[320px] lg:max-w-[350px] ">
+  <div className="flex gap-3 items-center px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black  py-[15px] shadow-input rounded-[10px] w-full max-w-[130px]">
+   <svg xmlns="http://www.w3.org/2000/svg" width={12} height={25} viewBox="0 0 12 25">
+<text id="_" data-name="₹" transform="translate(0 19)" fill="#fff" fontSize={18} fontFamily="Poppins-Regular, Poppins"><tspan x={0} y={0}>₹</tspan></text>
+</svg>
+
+
+    <input type="number" placeholder="" className=" pr-3  outline-none bg-transparent rounded-l-[10px] py-[5px]  w-full " />
+    
+   
+    </div>
+    <div className="h-[2px]  w-[25px] bg-light_text"></div>
+    <div className="flex gap-3 items-center px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black  py-[15px] shadow-input rounded-[10px] w-full max-w-[130px]">
+   <svg xmlns="http://www.w3.org/2000/svg" width={12} height={25} viewBox="0 0 12 25">
+<text id="_" data-name="₹" transform="translate(0 19)" fill="#fff" fontSize={18} fontFamily="Poppins-Regular, Poppins"><tspan x={0} y={0}>₹</tspan></text>
+</svg>
+
+
+    <input type="number" placeholder="" className=" pr-3  outline-none bg-transparent rounded-l-[10px] py-[5px]  w-full " />
+    
    
     </div>
   </div>
+
+  
+
 </div>
 
 <div className="max-w-[1110px] gap-5 md:flex-row flex-col mt-[70px] w-full flex justify-between items-end">
@@ -460,28 +753,22 @@ Total amount
     </p>
     <DropDown categories={Questions} />
 
-  </div>ServiceFoot
+  </div>
   <div className="w-full">
  
-  <input type="text" placeholder="Enter your Question" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
 
   </div>
 </div>
+
+
 <div className="flex mt-24 gap-6 items-center">
 
-{/* <input className="range" type="range" name ="" value={slider} min="0" max="1000" onChange={(e)=>{setSlider(e.target.value)}} onmousemove="rangeSlide(this.value)"/> */}
 <div className="relative  child max-w-[100px]">
 	<input type="range" max="100" min="0"   id="range" onChange={(e)=>{setSlider(e.target.value)}} value={slider}/>
 	</div>
   <p className="text-white text-xl leading-[25px]">GSTIN</p>
 </div>
-<div className="max-w-[1110px] md:flex-row flex-col gap-5  mt-[40px] w-full flex justify-between items-center">
- 
- 
-<input type="text" placeholder="GSTIN No" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
-  <input type="text" placeholder="Business Name" className=" px-[30px] text-[15px] leading-[18px] text-light_text bg-site_black py-[22px] outline-none shadow-input rounded-[10px] w-full max-w-[540px]" />
 
-</div>
 <Upgrade requirement={requirement} handleRequirement={handleRequirement}  ReqData={ReqData} toggle={toggle} handleToggle={handleToggle} />
 
       </form>
@@ -503,7 +790,7 @@ Preview</p>
         </div>
    
         <div className="grid w-full gap-10 mt-10 grid-cols-1 lg:grid-cols-2">
-          <Deal />
+          <Deal cart={true} />
 
         </div>
 
