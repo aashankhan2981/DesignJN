@@ -8,8 +8,8 @@ const ServiceFoot = () => {
       <div className="py-8 sm:py-[63px] sm:pl-10">
         <p className="text-2xl sm:text-[35px] font-bold leading-10 text-white">Help us improve this page</p>
         <p className="text-lg leading-5 text-light_text mt-2">Appreciate what you Liked, Criticise what you didn't.</p>
-        <div className="mt-[30px] max-w-[266px] rounded-xl shadow-stepShadow">
-          <button className="rounded-xl text-lg max-w-[266px] w-full  flex items-center justify-center font-medium leading-7 text-site_yellow py-3 sm:py-[18px] shadow-Shadow2">
+        <div className="mt-[30px]  sm:max-w-[266px] rounded-xl shadow-stepShadow">
+          <button className="rounded-xl text-lg sm:max-w-[266px] w-full  flex items-center justify-center font-medium leading-7 text-site_yellow py-3 sm:py-[18px] shadow-Shadow2">
           Give feedback here
           </button>
         </div>
