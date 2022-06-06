@@ -145,7 +145,7 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
 
 </div>
 </>
-:
+: ActiveStep==2?
 <>
 <div className='max-w-[532px] mt-10 sm:mt-12 md:mt-14 lg:mt-16 flex justify-between items-center gap-4 w-full text-base sm:text-lg md:text-xl lg:text-2xl  md:leading-6 text-white'>
     <button className='text-site_yellow' >Search</button>
@@ -216,7 +216,76 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
 </div>
 {/* Cards */}
 
+</>:ActiveStep==3?<>
+<div className='max-w-[532px] mt-10 sm:mt-12 md:mt-14 lg:mt-16 flex justify-between items-center gap-4 w-full text-base sm:text-lg md:text-xl lg:text-2xl  md:leading-6 text-white'>
+    <button className='text-site_yellow' >All Bids (10)</button>
+    <button>Liked (2)</button>
+    <button>Archived (2)</button>
+
+
+</div>
+<div className='flex items-center  w-full mx-6 md:mx-7 justify-center 2xl:justify-between sm:flex-row flex-col gap-4 mt-8 md:mt-10 lg:mt-14'>
+
+<div className='2xl:max-w-[948px]   gap-4 md:gap-6 lg:gap-8 xl:gap-10 px-6 md:px-7   md:w-2/3  flex items-center py-5 product-shadow rounded-xl'>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width={27} height={27} viewBox="0 0 27 27">
+  <g id="search">
+    <rect id="Rectangle_10" data-name="Rectangle 10" width={27} height={27} fill="#f7971e" opacity={0} />
+    <path id="Path_1" data-name="Path 1" d="M23.41,21.773l-3.918-3.907a9.127,9.127,0,0,0,1.948-5.647,9.22,9.22,0,1,0-9.22,9.22,9.127,9.127,0,0,0,5.647-1.948l3.907,3.918a1.157,1.157,0,1,0,1.636-1.636ZM5.3,12.22a6.915,6.915,0,1,1,6.915,6.915A6.915,6.915,0,0,1,5.3,12.22Z" transform="translate(0.457 0.457)" fill="#f7971e" />
+  </g>
+</svg>
+ <input type="text" className='text-base bg-transparent md:text-lg outline-none md:leading-[18px] text-light_text w-full' placeholder='Search by Username' />
+
+
+
+
+</div>
+<div className='flex gap-4 sm:w-auto w-full justify-center sm:justify-start md:gap-6 lg:gap-7 items-center'>
+    <div className='rounded-xl shadow-stepShadow text-base md:leading-7 font-medium text-white md:text-lg '>
+
+    <button className='px-4 md:px-5 lg:px-7 flex items-center gap-2 md:gap-3 py-3 md:py-4 lg:py-5 rounded-xl shadow-Shadow2'>Filter 
+   <svg xmlns="http://www.w3.org/2000/svg" width="16.25" height="16.25" viewBox="0 0 16.25 16.25">
+  <path id="Path_5426" data-name="Path 5426" d="M18.347,4.806H17.29a2.709,2.709,0,0,0-5.108,0H3.9a.9.9,0,1,0,0,1.806h8.279a2.709,2.709,0,0,0,5.108,0h1.057a.9.9,0,1,0,0-1.806ZM14.736,6.611a.9.9,0,1,0-.9-.9A.9.9,0,0,0,14.736,6.611ZM3,11.125a.9.9,0,0,1,.9-.9H4.96a2.709,2.709,0,0,1,5.108,0h8.279a.9.9,0,1,1,0,1.806H10.068a2.709,2.709,0,0,1-5.108,0H3.9A.9.9,0,0,1,3,11.125Zm4.514.9a.9.9,0,1,0-.9-.9A.9.9,0,0,0,7.514,12.028ZM3.9,15.639a.9.9,0,0,0,0,1.806h8.279a2.709,2.709,0,0,0,5.108,0h1.057a.9.9,0,1,0,0-1.806H17.29a2.709,2.709,0,0,0-5.108,0Zm11.736.9a.9.9,0,1,1-.9-.9A.9.9,0,0,1,15.639,16.542Z" transform="translate(-3 -3)" fill="#fff" fillRule="evenodd" />
+</svg>
+
+
+    </button>
+    </div>
+    <div className='rounded-xl shadow-stepShadow text-base md:leading-7 font-medium text-white md:text-lg '>
+
+    <button className='px-4 md:px-5 lg:px-7 flex items-center gap-2 md:gap-3 py-3 md:py-4 lg:py-5 rounded-xl shadow-Shadow2'>Sort By 
+   <svg xmlns="http://www.w3.org/2000/svg" width="14.829" height="8.414" viewBox="0 0 14.829 8.414">
+  <path id="Path_4188" data-name="Path 4188" d="M12,6,6,0,0,6" transform="translate(13.414 7.414) rotate(180)" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} strokeWidth={2} />
+</svg>
+
+
+
+
+    </button>
+    </div>
+</div>
+</div>
+
+<div className='mt-8 w-full px-4 md:mt-10 lg:mt-14 flex sm:flex-row flex-col  items-center gap-4 max-w-[1068px] justify-between '>
+
+
+
+</div>
+
+{/* Cards */}
+<div className='w-full flex justify-center '>
+<div className='grid  w-full  lg:grid-cols-2 grid-cols-1 gap-8 gap-y-14 xl:gap-y-14  md:gap-6 md:mt-10 lg:mt-14 mt-8 '>
+
+<Card step3={true} tag={'sponserd'}  available = {'2 in Queue'} hoverd={false}/>
+<Card  step3={true} tag={'highlighted'} available = {'Available Now'} hoverd={true} />
+<Card  step3={true} tag={'sponserd'} available = {'Available Now'} hoverd={true} />
+<Card  step3={true} tag={'none'} available = {'Available Now'} hoverd={true} />
+</div>
+</div>
+
+{/* Cards */}
+
 </>
+:<></>
 }
 <ServiceFoot/>
     </div>
