@@ -37,7 +37,7 @@ if(value.length!=0) {
     <div className='flex w-full'>
 
     <SidePart toggle={false} toggleCheck={toggleCheck} setToggleCheck={setToggleCheck} sidebarItems={sidebarItems} /> 
-      <div className='w-full'>
+      <div className='w-full '>
 
       <div className='sticky top-0 z-50 w-full'>
         <div className=' bg-site_black z-[60] 2xl:gap-10 relative max-w-[1920px] w-full md:pr-8 pr-6 lg:pr-14 xl:pr-[40px] gap-6 3xl:pr-[150px] hidden xl:flex justify-start items-center h-[90px] xl:h-[120px]'>
