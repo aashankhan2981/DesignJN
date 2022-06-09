@@ -1,0 +1,26 @@
+
+     [
+        {
+            "heading":"Product",
+            "array":["product1","product2","product3","product4","product5"]
+        },
+        {
+            "heading":"Recharge Bill",
+            "array":["product1","product2","product3","product4","product5"]
+        },
+        {
+            "heading":"Ticket",
+            "array":["product1","product2","product3","product4","product5"]
+        },
+        {
+            "heading":"GV/Coupons",
+            "array":["product1","product2","product3","product4","product5"]
+        },
+        {
+            "heading":"Bank Cards",
+            "array":["product1","product2","product3","product4","product5"]
+        }
+ 
+    ]
+
+
