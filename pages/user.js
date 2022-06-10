@@ -1,4 +1,6 @@
 import React from 'react'
+import GigListing from '../components/GigListing'
+import Requirement from '../components/Requirement'
 import Items from '../data/menuItem.json'
 const Index = () => {
   return (
@@ -50,6 +52,9 @@ const Index = () => {
 </div>
 
    </div>
+
+   <Requirement/>
+   <GigListing/>
 </div>
 
     </>

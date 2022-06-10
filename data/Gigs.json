@@ -1,0 +1,13 @@
+{
+    "heading"   :"Flight Tickets",
+    "id":"ID 435 ",
+    "img":"/assets/images/user/gig.png"
+,
+    "title":"Doing Domestic Flights Booking at 500₹ off",
+    "price":"₹ 500",
+    "Urgent":true,
+    "Available":"Now",
+    "off":"5% OFF",
+    "new":"02",
+    "inProgress":"01"
+}

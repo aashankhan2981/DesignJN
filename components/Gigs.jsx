@@ -1,12 +1,12 @@
 import React from "react";
 
-const Deal = ({ cart, title, description, updateDesign, id, topheading }) => {
+const Deal = ({gig}) => {
   return (
     <div className="rounded-[30px] h-full max-w-[630px] w-full shadow-stepShadow">
       <div className="rounded-[30px] h-full p-5 sm:p-[30px] shadow-Shadow2 ">
         <div className="relative flex items-center justify-between">
           <p className=" md:text-xl text-lg lg:text-2xl   leading-[30px] font-bold text-white">
-            {title ? title : "Flight Tickets"}
+            {gig?.heading}
           </p>
           <div className="flex top-[50px] absolute md:hidden gap-1 items-center">
             <svg
@@ -23,12 +23,12 @@ const Deal = ({ cart, title, description, updateDesign, id, topheading }) => {
                 fill="#00e800"
               />
             </svg>
-            <p className="text-[11px] md:leading-5 text-[#00E800]">5% OFF</p>
+            {gig?.off && <p className="text-[11px] md:leading-5 text-[#00E800]">{gig?.off}</p>}
           </div>
           <div className="flex gap-[25px] items-center">
             <div className=" rounded-xl shadow-stepShadow">
               <div className="px-[17px] text-white text-xs md:text-[15px] font-medium leading-[23px] shadow-Shadow2 py-[10px] rounded-xl ">
-                {id ? id : "ID 435"}
+                { gig?.id}
               </div>
             </div>
             <button>
@@ -62,33 +62,26 @@ const Deal = ({ cart, title, description, updateDesign, id, topheading }) => {
         </div>
         <div className="flex mt-[33px] sm:flex-row flex-col items-center gap-[30px]">
           <div className="rounded-xl w-full sm:max-w-[180px] object-cover object-center xl:max-w-[221px]">
-           {topheading?<img
-              src="/assets/images/user/cart.svg"
+          <img
+              src={`/assets/images/user/cart.svg`}
               className="w-full sm:w-auto"
               alt=""
             />
-           : <img
-              src="/assets/images/landing/deal1.svg"
-              className="w-full sm:w-auto"
-              alt=""
-            />}
+          
           </div>
           <div className="flex w-full sm:w-auto flex-col">
-            {topheading && (
-              <div className="w-full mb-2 max-w-[170px] text-[#745FEA] text-sm leading-5 flex item-center justify-between">
-                <p>Site logo</p>
-                <p>Site name</p>
-              </div>
-            )}
+
+         
+       
             <p className="text-base md:text-lg md:leading-[25px] max-w-[281px] text-white">
-              {description
-                ? description
-                : "Doing Domestic Flights Booking at 500₹ off"}
+              {
+          
+        "Doing Domestic Flights Booking at 500₹ off"}
             </p>
-            {!updateDesign ? (
-              <>
+
+
                 <p className="mt-[10px] text-2xl md:text-[30px] md:leading-5 text-site_yellow font-bold">
-                  ₹ 500
+                  {gig?.price?gig?.price:'₹ 0'}
                 </p>
                 <div className="flex mt-[15px] gap-5 xl:gap-0 xl:justify-between items-center justify-between sm:justify-start  xl:max-w-[116px] xl:w-full">
                   <p className="text-xs md:text-[15px] md:leading-5 text-light_text">
@@ -134,7 +127,7 @@ const Deal = ({ cart, title, description, updateDesign, id, topheading }) => {
                       Available
                     </p>
                     <p className="text-xs md:text-[15px] md:leading-5 text-white">
-                      Now
+                      {gig?.available}
                     </p>
                   </div>
                   <div className="hidden md:flex gap-1 items-center">
@@ -157,67 +150,16 @@ const Deal = ({ cart, title, description, updateDesign, id, topheading }) => {
                     </p>
                   </div>
                 </div>
-              </>
-            ) : (
-              <div className="flex  items-center justify-between mt-10 md:mt-14">
-                <div>
-                  <p className="text-sm text-white">Value</p>
-                  <p className="mt-1 text-2xl md:text-[30px] md:leading-5 text-site_yellow font-bold">
-                    ₹ 500
-                  </p>
-                </div>
-                <div className="flex flex-col items-end">
-                  <p className="text-sm text-white">Asking</p>
-                  <p className="text-sm text-[#00E800]">Bid</p>
-                </div>
-              </div>
-            )}
+      
           </div>
         </div>
-        {topheading&& <p className="mt-5 text-base leading-5">Offers (2) :   HDFC Cards + PhonePe Coupon</p>}
-        {updateDesign && (
-          <div className="flex mt-[31px] w-full justify-between ">
-            <div className="flex gap-4 md:gap-5 items-center ">
-              <div className="rounded-full shadow-stepShadow">
-                <button
-                  className={`px-4 md:px-7 text-[13px]   shadow-Shadow2 py-[10px]
-              text-light_text
-             rounded-full `}
-                >
-                  Open
-                </button>
-              </div>
-              <div className="flex items-center gap-2 ">
-                <p className="text-light_text text-sm leading-5">Bid:</p>
-                <p className="text-white text-base md:text-lg "> 7</p>
 
-              </div>
-            </div>
-            <div className="flex gap-4 md:gap-5 items-center">
-            <div className="flex items-center gap-2 ">
-                <p className="text-light_text text-sm leading-5">Average bid:</p>
-                <p className="text-white text-base md:text-lg "> ₹600</p>
-
-              </div>
-              <div>
-              <div className="rounded-full shadow-stepShadow">
-                <button
-                  className={`px-4 md:px-5 text-[13px]   shadow-Shadow2 py-[10px]
-              text-light_text
-             rounded-full `}
-                >
-                  View details
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
-        )}
+    
+ 
 
         <div
-          className={`flex  ${
-            updateDesign ? "mt-5" : "mt-[31px]"
-          } justify-between items-center w-full`}
+          className={`flex mt-[31px]
+           justify-between items-center w-full`}
         >
           <div className="flex gap-4 items-center">
             <div className="h-[52px] w-[52px] rounded-full">
@@ -236,8 +178,7 @@ const Deal = ({ cart, title, description, updateDesign, id, topheading }) => {
             </div>
           </div>
 
-          {updateDesign?  <p className="text-[12px] text-light_text">5 Min Ago</p>
-            :<div className="h-[30px] w-[30px] rounded-full shadow-stepShadow">
+<div className="h-[30px] w-[30px] rounded-full shadow-stepShadow">
        
           
           
@@ -262,7 +203,7 @@ const Deal = ({ cart, title, description, updateDesign, id, topheading }) => {
                 />
               </svg>
             </button>
-          </div>}
+          </div>
         </div>
       </div>
     </div>
