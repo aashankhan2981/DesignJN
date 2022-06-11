@@ -7,6 +7,7 @@ const Index = () => {
   const [slider,setSlider] = useState(100)
 
    return (
+    <div className='flex flex-col items-center w-full'>
     <div className="max-w-[1291px] mb-[200px] overflow-x-hidden  mt-[70px] md:mt-[86px] lg:px-10 md:px-6 px-4 w-full ">
   <p className="font-bold xl:text-[55px]  text-center md:text-3xl text-xl  sm:text-2xl  lg:text-4xl xl:leading-[65px]  text-white">
   Requirement Details
@@ -292,10 +293,242 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
 {/* Cards */}
 
 </>
-:<></>
+:ActiveStep==4?
+<>
+<div className='flex mt-9 md:mt-12 lg:mt-14 sm:flex-nowrap flex-wrap  gap-5  w-full justify-between items-start text-base sm:text-lg md:text-xl xl:text-2xl text-white xl:leading-6'>
+        <div className='flex sm:w-1/2 items-start   gap-5 md:gap-6 xl:gap-10 '>
+            <p>ID#123</p>
+            <p>Category/ Subcategory</p>
+        </div>
+        <p>Posted 22 July 2022, 09:44 PM</p>
+    </div>
+    <div className='mt-14 md:mt-16 lg:mt-20 '>
+        <div className=' max-w-[234px] text-lg md:text-xl lg:text-2xl lg:leading-6 text-white w-full flex justify-between items-center gap-5'>
+            <p className='text-site_yellow'>Seller 1</p>
+            <p>Seller 2</p>
+        </div>
+        <div className='mt-6  border-t pt-6 border-t-[#808080]'>
+            <div className='flex justify-between w-full items-start'>
+                <div className='max-w-[303px] flex justify-between items-center gap-4 w-full'>
+                <div>
+                    <p className="text-sm md:text-base md:leading-5 text-light_text">Order No</p>
+                    <p className='text-white text-lg md:text-lg md:leading-6'>#123</p>
+                </div>
+                <div>
+                    <p className="text-sm md:text-base md:leading-5 text-light_text">Order Date</p>
+                    <p className='text-white text-lg md:text-lg md:leading-6'>22 July, 11:00 PM</p>
+                </div>
+                </div>
+                <p className='text-lg md:text-xl md:leading-6 text-[#F10000]'>Raise a dispute</p>
+
+            </div>
+            <div className='mt-20  md:mt-24 flex justify-between w-full5 lg:mt-28'>
+                <div className='flex gap-4 md:gap-5 items-center'>
+                    <div className='relative w-20 flex items-center justify-center  h-20 rounded-full border border-site_yellow'>
+                   <svg className='absolute bottom-0 right-0' xmlns="http://www.w3.org/2000/svg" width={18} height={18} viewBox="0 0 18 18">
+  <circle id="Ellipse_389" data-name="Ellipse 389" cx={9} cy={9} r={9} fill="#15d807" />
+</svg>
+<img src="/assets/images/requirements/seller.svg" className='w-[68px] h-[68px] rounded-full' alt="" />
+
+                    </div>
+                    <div className='flex gap-3 items-start'>
+                        <div>
+                            <p className='text-xl md:text-2xl lg:text-[28px] text-white lg:leading-6 font-semibold'>Seller's  Name</p>
+<p className='text-site_yellow md:text-lg text-base md:leading-6'>@username</p>
+                        </div>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24.473" height="28.5" viewBox="0 0 24.473 28.5">
+  <g id="Group_616" data-name="Group 616" transform="translate(-747 -2064)">
+    <path id="Union_75" data-name="Union 75" d="M11.994,28.447C4.483,25.05,0,19.316,0,13.111V4.544A.6.6,0,0,1,.4,3.98L12.047.031a.6.6,0,0,1,.379,0L24.07,3.98a.6.6,0,0,1,.4.564v8.567c0,6.2-4.483,11.939-11.993,15.336a.587.587,0,0,1-.487,0Z" transform="translate(747 2064)" fill="#ffa31a" />
+    <text id="_50_" data-name="50%" transform="translate(751 2080)" fill="#fff" fontSize={9} fontFamily="SegoeUI-Semibold, Segoe UI" fontWeight={600}><tspan x={0} y={0}>50%</tspan></text>
+  </g>
+</svg>
+
+
+                    </div>
+
+                </div>
+                <div >
+                <div className="flex mb-[10px] mt-[5px] gap-2">
+                <img src="/assets/images/landing/stars.svg" alt="profile" />
+                <p className="text-[11px] md:leading-5 text-light_text">
+                  (55 Reviews)
+                </p>
+              </div>
+              <div className='flex  items-center sm:w-auto w-full justify-between gap-4'>
+                 <div className='flex   gap-[6px] items-center'>
+
+       <svg xmlns="http://www.w3.org/2000/svg" width="16.607" height="16.607" viewBox="0 0 16.607 16.607">
+  <path id="Path_5422" data-name="Path 5422" d="M40.3,23.992A8.313,8.313,0,0,0,32,32.3v7a1.3,1.3,0,0,0,1.3,1.3h7a8.3,8.3,0,0,0,0-16.607Zm-3.986,9.632a1,1,0,1,1,1-1,1,1,0,0,1-1,1Zm3.986,0a1,1,0,1,1,1-1,1,1,0,0,1-1,1Zm3.986,0a1,1,0,1,1,1-1,1,1,0,0,1-1,1Z" transform="translate(-32 -23.992)" fill="gray" />
+</svg>
+
+<p className='text-xs text-light_text'>60%</p>
+                 </div>
+                 <div className='flex gap-[6px] items-center'>
+<svg xmlns="http://www.w3.org/2000/svg" width="13.412" height="17.619" viewBox="0 0 13.412 17.619">
+  <path id="Path_5424" data-name="Path 5424" d="M9.684.625A.854.854,0,0,0,8.456,1.688c.995,2.336.733,3.45.489,3.9a1.216,1.216,0,0,1-.853.631c-.46.085-.807-.824-.813-.83a.848.848,0,0,0-.733-.568.858.858,0,0,0-.818.438c-1.506,2.745-1.9,5.32-1.177,7.662a9.255,9.255,0,0,0,4.3,5.1.834.834,0,0,0,.381.091A.844.844,0,0,0,9.8,17.9a.859.859,0,0,0,.239-.932c-.261-.71-.722-2.768.233-3.774a8.831,8.831,0,0,0,1.273-1.66c2.285,3.592,1.063,4.717,1.04,4.746-.006,0-.006.006-.011.006a.855.855,0,0,0,.966,1.41c0-.006.006-.006.011-.011C16.323,15.75,17.687,13.5,17.607,11,17.437,5.428,10,.819,9.684.625Z" transform="translate(-4.198 -0.501)" fill="gray" />
+</svg>
+
+
+
+<p className='text-xs text-light_text'>6</p>
+     </div>
+     <div className='flex gap-[6px] items-center'>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="16.607" height="16.607" viewBox="0 0 16.607 16.607">
+<path id="Path_5422" data-name="Path 5422" d="M40.3,23.992A8.313,8.313,0,0,0,32,32.3v7a1.3,1.3,0,0,0,1.3,1.3h7a8.3,8.3,0,0,0,0-16.607Zm-3.986,9.632a1,1,0,1,1,1-1,1,1,0,0,1-1,1Zm3.986,0a1,1,0,1,1,1-1,1,1,0,0,1-1,1Zm3.986,0a1,1,0,1,1,1-1,1,1,0,0,1-1,1Z" transform="translate(-32 -23.992)" fill="gray" />
+</svg>
+<p className='text-xs text-light_text'>55</p>
+     </div>
+
+
+             </div>
+                </div>
+            </div>
+
+        </div>
+        <div className='mt-10 justify-between gap-5  md:mt-14 lg:mt-16 xl:mt-[70px]  flex items-center '>
+        <div className='2xl:max-w-[948px]  gap-4 md:gap-6 lg:gap-8 xl:gap-10 px-6 md:px-7   md:w-2/3 2xl:w-full flex items-center py-5 product-shadow rounded-xl'>
+
+ <input type="text" className='text-base bg-transparent md:text-lg outline-none md:leading-[18px] text-light_text w-full' placeholder='Type to break the ice' />
+<div className='pl-4 border-l border-l-[#808080] md:pl-6 lg:pl-8'>
+
+<svg id="Group_529" data-name="Group 529" xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
+  <path id="Path_5431" data-name="Path 5431" d="M0,0H24V24H0Z" fill="none" />
+  <path id="Path_5432" data-name="Path 5432" d="M3.4,20.4l17.45-7.48a1,1,0,0,0,0-1.84L3.4,3.6a.993.993,0,0,0-1.39.91L2,9.12a.994.994,0,0,0,.87.99L17,12,2.87,13.88a1.012,1.012,0,0,0-.87,1l.01,4.61A.993.993,0,0,0,3.4,20.4Z" fill="#ffa31a" />
+</svg>
+</div>
+
+
+
+
+</div>
+
+<div className='max-w-[190px] w-full shadow-stepShadow rounded-xl'>
+        <button className='rounded-xl flex items-center justify-center w-full text-white shadow-Shadow2 py-3 md:py-4'>
+        Open in Chat
+
+        </button>
+    </div>
+        </div>
+        <div className='mt-10 justify-between max-w-[503px] gap-5  md:mt-14 lg:mt-16 xl:mt-[70px]  flex items-end '>
+            <div>
+                <p className='text-base md:text-lg md:leaidng-6 text-light_text'>Original value</p>
+                <p className='text-xl md:text-2xl lg:text-[28px] text-white leading-7'>₹ 800</p>
+            </div>
+            <div>
+                <p className='text-base md:text-lg md:leaidng-6 text-light_text'>Seller’s bid</p>
+                <p className='text-xl md:text-2xl lg:text-[28px] text-white leading-7'>₹ 600</p>
+            </div>
+            <p className='text-base md:text-lg md:leaidng-6 text-light_text'>In <span className='text-xl md:text-2xl lg:text-[28px] text-white leading-7'>4</span> milestones</p>
+            </div>
+            <div className='mt-10 justify-between max-w-[840px] gap-5  md:mt-14 lg:mt-16 xl:mt-[70px]  flex items-end '>
+              <div>
+                <p className='text-base mb-[5px] md:text-lg md:leaidng-6 text-light_text'>Delivery time</p>
+                <p className='max-w-[166px] inline-flex gap-3 text-base mb-[5px] md:text-lg md:leaidng-6 text-white'>
+                <span>DD</span>   <span>:</span>    <span>HH</span>   <span>:</span> <span>MM</span>
+
+                </p>
+
+                
+              </div>
+              <div>
+                <p className='text-base mb-[5px] md:text-lg md:leaidng-6 text-light_text'>Extras</p>
+                <p className='max-w-[260px] inline-flex gap-3 text-base mb-[5px] md:text-lg md:leaidng-6 text-white'>
+                Free invoice,  Urgent delivery 
+
+                </p>
+
+                
+              </div>
+            
+               
+            </div>
+            <div className='mt-10 md:mt-12 lg:mt-14 rounded-md w-full shadow-stepShadow'>
+                <div className='flex px-6 lg:px-8 xl:px-10 flex-col items-center shadow-Shadow2 pt-10 md:pt-12 lg:pt-14  rounded-md'>
+                       <div className='flex text-center text-xl md:text-2xl lg:text-[28px] text-white leading-7 justify-between items-center max-w-[815px] w-full'>
+
+                         <div className='flex flex-col items-center'>
+                            <p className='text-light_text'>Budget</p>
+                            <p>₹ 600</p>
+                         </div>
+                         <div className='flex flex-col items-center'>
+                            <p className='text-light_text'>Paid milestone</p>
+                            <p>₹ 150</p>
+                         </div>
+                         <div className='flex flex-col items-center'>
+                            <p className='text-light_text'>Remaining milestone</p>
+                            <p>₹ 450</p>
+                         </div>
+                       </div>
+                       <div className='w-full mt-10 md:mt-14 lg:mt-16 xl:mt-[70px]  flex justify-between items-center'>
+                        <p className='text-white text-lg md:text-xl md:leading-6 '>Milestone(s) : 4</p>
+                        <div className='shadow-stepShadow max-w-[451px] w-full'>
+                            <button className='shadow-Shadow2 w-full flex items-center justify-center px-4 py-[9px] md:py-3 lg:py-4 xl:py-5 text-white text-base md:text-lg md:leading-6'>+Add or Edit milestone
+
+                            </button>
+                        </div>
+                       </div>
+                       <div className='w-full mt-10 text-lg md:text-xl md:leading-5 md:mt-14 lg:mt-16 xl:mt-[70px]  flex gap-5 md:gap-6 items-start'>
+                         
+                        <p className='text-site_yellow  '>1.</p>
+                        <div className='flex flex-col  gap-8 w-full'>
+
+                        <p  className='max-w-[736px] text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium dolor etiam elementum. <span className='text-site_yellow'>More</span></p>
+                        <div className='flex justify-between items-center w-full'>
+                            <p className='text-white text-2xl md:text-3xl lg:text-[40px] font-semibold md:font-bold'>₹ 150</p>
+                            <p className='text-[#15D807] text-lg md:text-xl lg:text-2xl lg:leading-[35px] font-medium'>Completed</p>
+                            <button className='bg-[#FFA31A] md:py-4 2xl:py-5 py-3 text-base md:text-lg md:leading-7 text-white rounded-md px-5 md:px-7 xl:px-8 flex items-center gap-1 '>
+                            Verify & Pay
+          </button>
+                        </div>
+                        <div className='shadow-stepShadow h-5 w-full rounded-xl max-w-[992px]'>
+                        <div className='h-5 rounded-xl shadow-Shadow2 w-full '>
+                            <img src="/assets/images/requirements/progressBar.svg" className='h-5' alt="Progress" />
+
+</div>
+                        </div>
+                    
+
+                        </div>
+                        </div>
+
+
+                        <div className='w-full mt-10 text-lg md:text-xl md:leading-5 md:mt-14 lg:mt-16 xl:mt-[70px]  flex gap-5 md:gap-6 items-start'>
+                         
+                         <p className='text-site_yellow  '>1.</p>
+                         <div className='flex flex-col  gap-8 w-full'>
+ 
+                         <p  className='max-w-[736px] text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium dolor etiam elementum. <span className='text-site_yellow'>More</span></p>
+                         <div className='flex justify-between items-center w-full'>
+                             <p className='text-white text-2xl md:text-3xl lg:text-[40px] font-semibold md:font-bold'>₹ 150</p>
+                             <p className='text-[#2DB4F8] text-lg md:text-xl lg:text-2xl lg:leading-[35px] font-medium'>InProcess</p>
+                             <button className='bg-[#FFA31A] md:py-4 2xl:py-5 py-3 text-base md:text-lg md:leading-7 text-white rounded-md px-5 md:px-7 xl:px-8 flex items-center gap-1 '>
+                             Action
+           </button>
+                         </div>
+                         <div className='shadow-stepShadow h-5 w-full rounded-xl max-w-[992px]'>
+                         <div className='h-5 rounded-xl shadow-Shadow2 w-full '>
+                             <img src="/assets/images/requirements/progressBar2.svg" className='h-5' alt="Progress" />
+ 
+ </div>
+                         </div>
+                     
+ 
+                         </div>
+                         </div>
+
+                </div>
+
+              </div>
+
+    </div>
+
+</>
+:<>
+</>
 }
 <ServiceFoot/>
-    </div>
+    </div></div>
   )
 }
 

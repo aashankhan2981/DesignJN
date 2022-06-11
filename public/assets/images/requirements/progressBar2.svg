@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="472" height="20" viewBox="0 0 472 20">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.764" y1="0.5" x2="0.132" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffa31a"/>
+      <stop offset="1" stop-color="#feb12e"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_239" data-name="Rectangle 239" width="472" height="20" rx="10" transform="translate(7575 2340)" fill="url(#linear-gradient)"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_15" data-name="Mask Group 15" transform="translate(-7575 -2340)" clip-path="url(#clip-path)">
+    <g id="Group_807" data-name="Group 807" transform="translate(7564.779 2328)">
+      <rect id="Rectangle_214" data-name="Rectangle 214" width="953" height="20" rx="10" transform="translate(11.221 12)" fill="url(#linear-gradient)"/>
+      <g id="Group_806" data-name="Group 806">
+        <path id="Path_14156" data-name="Path 14156" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 21.85, 0)" fill="#fb9806"/>
+        <path id="Path_14157" data-name="Path 14157" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 62.732, 0)" fill="#fb9806"/>
+        <path id="Path_14158" data-name="Path 14158" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 103.614, 0)" fill="#fb9806"/>
+        <path id="Path_14159" data-name="Path 14159" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 144.496, 0)" fill="#fb9806"/>
+        <path id="Path_14160" data-name="Path 14160" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 185.378, 0)" fill="#fb9806"/>
+        <path id="Path_14161" data-name="Path 14161" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 226.26, 0)" fill="#fb9806"/>
+        <path id="Path_14162" data-name="Path 14162" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 267.141, 0)" fill="#fb9806"/>
+        <path id="Path_14163" data-name="Path 14163" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 308.023, 0)" fill="#fb9806"/>
+        <path id="Path_14164" data-name="Path 14164" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 348.905, 0)" fill="#fb9806"/>
+        <path id="Path_14165" data-name="Path 14165" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 389.787, 0)" fill="#fb9806"/>
+        <path id="Path_14166" data-name="Path 14166" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 430.669, 0)" fill="#fb9806"/>
+        <path id="Path_14167" data-name="Path 14167" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 471.551, 0)" fill="#fb9806"/>
+        <path id="Path_14168" data-name="Path 14168" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 512.433, 0)" fill="#fb9806"/>
+        <path id="Path_14169" data-name="Path 14169" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 553.315, 0)" fill="#fb9806"/>
+        <path id="Path_14170" data-name="Path 14170" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 594.197, 0)" fill="#fb9806"/>
+        <path id="Path_14171" data-name="Path 14171" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 635.078, 0)" fill="#fb9806"/>
+        <path id="Path_14172" data-name="Path 14172" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 675.96, 0)" fill="#fb9806"/>
+        <path id="Path_14173" data-name="Path 14173" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 716.842, 0)" fill="#fb9806"/>
+        <path id="Path_14174" data-name="Path 14174" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 757.724, 0)" fill="#fb9806"/>
+        <path id="Path_14175" data-name="Path 14175" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 798.606, 0)" fill="#fb9806"/>
+        <path id="Path_14176" data-name="Path 14176" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 839.488, 0)" fill="#fb9806"/>
+        <path id="Path_14177" data-name="Path 14177" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 880.37, 0)" fill="#fb9806"/>
+        <path id="Path_14178" data-name="Path 14178" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 921.252, 0)" fill="#fb9806"/>
+        <path id="Path_14179" data-name="Path 14179" d="M0,0,17.144.6l1.365,40.044-17.144-.6Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 962.134, 0)" fill="#fb9806"/>
+      </g>
+    </g>
+  </g>
+</svg>
