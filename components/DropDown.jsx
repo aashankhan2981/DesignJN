@@ -14,7 +14,7 @@ const DropDown = ({categories}) => {
   
     }
   return (
-    <div className={`relative overflow- z-0 mt-[15px] shadow-stepShadow ${toggle?'':'rounded-b-xl'} rounded-t-xl max-w-[535px]`}>
+    <div className={`relative  mt-[15px] shadow-stepShadow ${toggle?'':'rounded-b-xl'} rounded-t-xl max-w-[535px]`}>
     <div
       onClick={(e) => {
           e.stopPropagation()

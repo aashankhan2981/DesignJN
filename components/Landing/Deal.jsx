@@ -64,12 +64,12 @@ const Deal = ({ cart, title, description, updateDesign, id, topheading }) => {
           <div className="rounded-xl w-full sm:max-w-[180px] object-cover object-center xl:max-w-[221px]">
            {topheading?<img
               src="/assets/images/user/cart.svg"
-              className="w-full  sm:w-auto"
+              className="w-full max-h-[150px]  sm:max-h-max sm:w-auto"
               alt=""
             />
            : <img
               src="/assets/images/landing/deal1.svg"
-              className="w-full sm:w-auto  sm:max-h-max"
+              className="w-full sm:w-auto max-h-[150px]  sm:max-h-max"
               alt=""
             />}
           </div>

@@ -222,7 +222,7 @@ input::-webkit-inner-spin-button {
   height: 8.4px;
   cursor: pointer;
   /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; */
-  background: #745FEA;
+  /* background: #745FEA; */
   border-radius: 10px;
   /* border: 0.2px solid #010101; */
 }
@@ -259,10 +259,12 @@ input::-webkit-inner-spin-button {
   width: 55px;
   border-radius: 50%;
   background: #ffffff;
+  
   cursor: pointer;
 /* 	z-index: 2;
 	position: relative; */
 opacity: 0;	
+
 	
 }
 #range::-ms-track {
@@ -273,6 +275,7 @@ opacity: 0;
   border-color: transparent;
 /*   border-width: 16px 0; */
   color: transparent;
+  
 }
 #range::-ms-fill-lower {
   background: #2a6495;
@@ -294,6 +297,8 @@ opacity: 0;
   border-radius: 3px;
   background: #01a3a4;
   cursor: pointer;
+  position: relative;
+  z-index: 100;
 }
 #range:focus::-ms-fill-lower {
   background: #000;
@@ -339,3 +344,19 @@ opacity: 0;
 
 }
 
+.custom-scroll::-webkit-scrollbar {
+  width: 7px;
+  /* background: #0505055d; */
+}
+.custom-scroll::-webkit-scrollbar {
+  width: 7px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: white; 
+  border-radius: 7px;
+}
+
+/* Handle on hover */
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: white; 
+}

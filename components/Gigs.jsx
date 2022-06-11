@@ -3,7 +3,7 @@ import React from "react";
 const Deal = ({gig}) => {
   return (
     <div className="rounded-[30px] h-full max-w-[630px] w-full shadow-stepShadow">
-      <div className="rounded-[30px] h-full p-5 sm:p-[30px] shadow-Shadow2 ">
+      <div className="rounded-[30px] h-full p-4 sm:p-5 lg:p-[25px] shadow-Shadow2 ">
         <div className="relative flex items-center justify-between">
           <p className=" md:text-xl text-lg lg:text-2xl   leading-[30px] font-bold text-white">
             {gig?.heading}
@@ -64,7 +64,7 @@ const Deal = ({gig}) => {
           <div className="rounded-xl w-full sm:max-w-[180px] object-cover object-center xl:max-w-[221px]">
           <img
               src={`/assets/images/user/cart.svg`}
-              className="w-full sm:w-auto"
+              className="w-full max-h-[150px]  sm:max-h-max sm:w-auto"
               alt=""
             />
           

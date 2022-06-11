@@ -16,7 +16,7 @@ const Index = () => {
   const [Active,setActive] = useState(true)
   const [Accept,setAccept] = useState(false)
   const [SwitchDiscount,setSwitchDiscount] = useState(false)
-  const [slider,setSlider] = useState(100)
+  const [slider,setSlider] = useState(20)
   const [toggle,setToggle] = useState([])
   const [toggleCheckBox,setToggleCheckBox] = useState([{key:'discount',value:'Discount',toggle:false},{key:'cashback',value:'Cashback',toggle:false},{key:'coupon',value:'Coupon',toggle:false}])
   const [toggle2,setToggle2] = useState(false)
@@ -764,7 +764,14 @@ Add offer
 <div className="flex mt-24 gap-6 items-center">
 
 <div className="relative  child max-w-[100px]">
-	<input type="range" max="100" min="0"   id="range" onChange={(e)=>{setSlider(e.target.value)}} value={slider}/>
+	<input type="range" className="bg-transparent relative z-10" max="100" min="0"   id="range" onChange={(e)=>{setSlider(e.target.value)}} value={slider}/>
+  <div className="flex ">
+  <div style={{width: `${slider==0?slider+4:slider-5}px`}} className="absolute top-2  bg-[#745FEA] left-0 w-full border border-[#745FEA]  h-[9px] rounded-[10px]"></div>
+  <div style={{width: `${slider==0?94 - slider:100 - slider}px`}} className="absolute top-2 right-1  bg-white w-full   h-[9px] rounded-[10px]">
+
+  </div>
+
+  </div>
 	</div>
   <p className="text-white text-xl leading-[25px]">GSTIN</p>
 </div>

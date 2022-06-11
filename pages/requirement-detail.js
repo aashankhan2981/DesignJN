@@ -178,7 +178,14 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
 
 <div className='max-w-[196px] sm:justify-start justify-center  gap-4   w-full flex items-center  '>
 <div className="relative  child max-w-[100px]">
-	<input type="range" max="100" min="0"   id="range" onChange={(e)=>{setSlider(e.target.value)}} value={slider}/>
+	<input type="range" className="bg-transparent relative z-10" max="100" min="0"   id="range" onChange={(e)=>{setSlider(e.target.value)}} value={slider}/>
+  <div className="flex ">
+  <div style={{width: `${slider==0?slider+4:slider-5}px`}} className="absolute top-2  bg-[#745FEA] left-0 w-full border border-[#745FEA]  h-[9px] rounded-[10px]"></div>
+  <div style={{width: `${slider==0?94 - slider:100 - slider}px`}} className="absolute top-2 right-1  bg-white w-full   h-[9px] rounded-[10px]">
+
+  </div>
+
+  </div>
 	</div>
     <p className='text-lg md:text-xl md:leading-6 text-white'>Online</p>
 </div>

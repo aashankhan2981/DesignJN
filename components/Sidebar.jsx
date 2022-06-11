@@ -7,12 +7,11 @@ import sidebarItems from '../data/sidebar.json'
 import SidePart from './SidePart'
 const Sidebar = ({children}) => {
     const [toggle,setToggle] = useState(false)
-    const [toggleCheck,setToggleCheck] = useState(false)
+    const [toggleCheck,setToggleCheck] = useState(true)
     const [value,setValue] = useState('')
     const handleToggle = (e) => { 
         setToggle(!toggle)
-        // e.target.classList.toggle('opened');
-        //  e.target.setAttribute('aria-expanded', e.target.classList.contains('opened'))
+      
 
          }
          useEffect(() => {
@@ -67,7 +66,7 @@ if(value.length!=0) {
                     <Link href={''}>
                         <button className='text-white 3xl:max-w-max max-w-[94px] 3xl:w-auto w-full   font-medium text-base 3xl:text-lg 3xl:leading-7'> Create gig </button>
                     </Link>
-                    <Link className='' href={''}>
+                    <Link className='/post-service' href={''}>
                         <button className='header-button px-[10px] w-[160px] 3xl:w-auto  py-4 3xl:px-6 text-site_yellow rounded-xl 3xl:py-5 font-medium text-base 3xl:text-lg 3xl:leading-7'>Post requirement </button>
                     </Link>
                     <div className='max-w-[81px] flex  gap-1 items-center w-full'>
