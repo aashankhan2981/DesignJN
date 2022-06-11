@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ServiceFoot = () => {
+const ServiceFoot = ({widthAuto}) => {
   return (
-    <div className="w-full px-4">
+<div className={`${ widthAuto? "w-auto":"w-full"} px-4`}>
 
     <div className="bg-[#292929] rounded-3xl shadow-Shadow2 md:items-start items-center md:flex-row flex-col-reverse px-4 md:px-6 lg:px-8 xl:px-12  w-full max-w-[1260px] flex  justify-between mt-[83px] ">
       <div className="py-8 sm:py-[63px] sm:pl-10">

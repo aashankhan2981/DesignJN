@@ -60,7 +60,7 @@ const Deal = ({gig}) => {
             </button>
           </div>
         </div>
-        <div className="flex mt-[33px] sm:flex-row flex-col items-center gap-[30px]">
+      <div className="flex mt-[33px] sm:flex-row lg:flex-row md:flex-col flex-col items-center gap-[30px]">
           <div className="rounded-xl w-full sm:max-w-[180px] object-cover object-center xl:max-w-[221px]">
           <img
               src={`/assets/images/user/cart.svg`}

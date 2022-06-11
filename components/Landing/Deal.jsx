@@ -3,7 +3,7 @@ import React from "react";
 const Deal = ({ cart, title, description, updateDesign, id, topheading }) => {
   return (
     <div className="rounded-[30px] h-full max-w-[630px] w-full shadow-stepShadow">
-      <div className="rounded-[30px] h-full p-5 sm:p-[30px] shadow-Shadow2 ">
+      <div className="rounded-[30px] h-full p-4 sm:p-5 lg:p-[25px] shadow-Shadow2 ">
         <div className="relative flex items-center justify-between">
           <p className=" md:text-xl text-lg lg:text-2xl   leading-[30px] font-bold text-white">
             {title ? title : "Flight Tickets"}
@@ -64,12 +64,12 @@ const Deal = ({ cart, title, description, updateDesign, id, topheading }) => {
           <div className="rounded-xl w-full sm:max-w-[180px] object-cover object-center xl:max-w-[221px]">
            {topheading?<img
               src="/assets/images/user/cart.svg"
-              className="w-full sm:w-auto"
+              className="w-full  sm:w-auto"
               alt=""
             />
            : <img
               src="/assets/images/landing/deal1.svg"
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto  sm:max-h-max"
               alt=""
             />}
           </div>
@@ -176,11 +176,11 @@ const Deal = ({ cart, title, description, updateDesign, id, topheading }) => {
         </div>
         {topheading&& <p className="mt-5 text-base leading-5">Offers (2) :   HDFC Cards + PhonePe Coupon</p>}
         {updateDesign && (
-          <div className="flex mt-[31px] w-full justify-between ">
-            <div className="flex gap-4 md:gap-5 items-center ">
+          <div className="flex mt-[31px] lg:flex-row flex-col w-full justify-between ">
+            <div className="flex gap-4 lg:justify-start justify-between lg:gap-5 items-center ">
               <div className="rounded-full shadow-stepShadow">
                 <button
-                  className={`px-4 md:px-7 text-[13px]   shadow-Shadow2 py-[10px]
+                  className={`px-4 lg:px-7 text-[13px]   shadow-Shadow2 py-[10px]
               text-light_text
              rounded-full `}
                 >
@@ -193,16 +193,16 @@ const Deal = ({ cart, title, description, updateDesign, id, topheading }) => {
 
               </div>
             </div>
-            <div className="flex gap-4 md:gap-5 items-center">
-            <div className="flex items-center gap-2 ">
+            <div className="flex gap-4 lg:gap-5 lg:justify-start justify-between items-center">
+            <div className="flex items-center gap-1 lg:gap-2 ">
                 <p className="text-light_text text-sm leading-5">Average bid:</p>
-                <p className="text-white text-base md:text-lg "> ₹600</p>
+                <p className="text-white text-base lg:text-lg "> ₹600</p>
 
               </div>
               <div>
               <div className="rounded-full shadow-stepShadow">
                 <button
-                  className={`px-4 md:px-5 text-[13px]   shadow-Shadow2 py-[10px]
+                  className={`px-4 lg:px-5 text-[13px]   shadow-Shadow2 py-[10px]
               text-light_text
              rounded-full `}
                 >

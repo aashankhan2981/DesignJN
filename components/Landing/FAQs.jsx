@@ -33,7 +33,7 @@ const FAQs = () => {
   return (
     <div className='mt-[150px] lg:px-10 md:px-6 px-4 w-full flex flex-col items-center'>
           <p className="max-w-[793px] text-center   sm:text-3xl text-2xl  lg:text-4xl xl:text-[55px] xl:leading-[65px] font-bold text-white">Frequently Asked Questions</p>
-          <p className='mt-2 w-full text-center font-bold text-[20px] text-white'>(We’re Tired of Answering)</p>
+        <p className='mt-2 w-full text-center font-bold text-[20px] text-white inline-flex  max-w-[300px]'>(We’re Tired of Answering <img className='ml-2' src="/assets/images/user/emoji.svg" alt="" /> )</p>
           <p className='text-lg leading-[25px]  text-light_text max-w-[644px] text-center mt-3 '>We may or may not be from the future. Here are the questions you were just about to asked us.</p>
           <div className='flex flex-col gap-[30px] w-full items-center mt-[70px] '>
 
