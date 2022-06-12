@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Deal = ({gig}) => {
+    const [dropDown,setDropDown] = useState(false)
   return (
-    <div className="rounded-[30px] h-full max-w-[630px] w-full shadow-stepShadow">
+    <div className="rounded-[30px]   relative h-full max-w-[630px] w-full shadow-stepShadow">
       <div className="rounded-[30px] h-full p-4 sm:p-5 xl:p-[25px] shadow-Shadow2 ">
         <div className="relative flex items-center justify-between gap-3">
         <div className="flex gap-4 justify-between items-center max-w-[200px] sm:max-w-[267px] w-full">
@@ -36,14 +37,15 @@ const Deal = ({gig}) => {
             </svg>
             {gig?.off && <p className="text-[11px] md:leading-5 text-[#00E800]">{gig?.off}</p>}
           </div>
-          <div className="flex gap-[25px] items-center">
+          <div className="relative flex gap-[25px] items-center">
             <div className=" rounded-xl shadow-stepShadow">
               <div className="px-[17px] text-white text-xs md:text-[15px] font-medium leading-[23px] shadow-Shadow2 py-[10px] rounded-xl ">
                 { gig?.id}
               </div>
             </div>
-            <button>
-              <svg
+            
+            <button className="relative ">
+              <svg className="cursor-pointer" onClick={()=>{setDropDown(!dropDown)}}
                 id="Component_16_39"
                 data-name="Component 16  39"
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,8 +70,19 @@ const Deal = ({gig}) => {
                   fill="#ffa31a"
                 />
               </svg>
+              {dropDown && <div className="shadow-stepShadow z-10 rounded-xl text-sm md:text-base md:leading-5  absolute h-[216px] w-[177px] right-[-20px] object-cover object-center top-6 bg-site_black">
+                <img src="/assets/images/requirements/polygon.svg" className="absolute pointer-events-none right-2 -top-8 z-0" alt="" />
+            <div className="shadow-Shadow2 bg-site_black text-light_text z-20 relative h-full items-center gap-4 justify-center flex flex-col rounded-xl w-full">
+            <p className="max-w-[121px] w-full text-left pb-[10px] border-b border-light_text">Share</p>
+<p className="max-w-[121px] w-full text-left pb-[10px] border-b border-light_text">Report</p>
+<p className="max-w-[121px] w-full text-left pb-[10px] border-b border-light_text">Invite</p>
+            </div>
+              
+            </div> }
             </button>
+       
           </div>
+
         </div>
       <div className="flex mt-[33px] sm:flex-row lg:flex-row md:flex-col flex-col items-center gap-[30px]">
           <div className="rounded-xl w-full max-w-[180px] object-cover object-center xl:max-w-[221px]">

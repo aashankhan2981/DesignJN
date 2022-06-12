@@ -10,13 +10,19 @@ import whyData from '../data/Why.json'
 import categories from '../data/categories.json'
 import Category from '../components/Landing/Category'
 import FAQs from '../components/Landing/FAQs'
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "../node_modules/swiper/swiper-bundle.min.css";
+import SwiperCore, { Mousewheel, Pagination, Navigation } from "swiper";
 import ServiceFoot from '../components/Requirement/ServiceFoot'
 import { Slider } from '../components/Slider'
+SwiperCore.use([Pagination, Mousewheel, Navigation]);
+import 'swiper/css';
+import 'swiper/css/effect-fade';
 
 const Index = () => {
   const [isPlaying,setPlaying] =useState(false)
   const videoRef = useRef(null)
+  const slides = [1,2,3,4]
 
   return (
     <>
@@ -34,7 +40,7 @@ const Index = () => {
     </div>
 <div className="pb-16 flex text-white flex-col mt-10 md:mt-14 lg:mt-16 xl:mt-20 items-center w-full">
 
-   <div className='w-full max-w-[1400px] flex items-center justify-between gap-5 md:flex-row flex-col-reverse px-4 md:px-6'>
+   <div className='w-full max-w-[1400px] overflow-hidden flex items-center justify-between gap-5 md:flex-row flex-col-reverse px-4 md:px-6'>
 <div>
 <div className=" gap-4 items-center flex md:text-left text-center  text-base md:text-lg md:leading-6 text-white">
         <img src="/assets/images/user/loudspeaker.png" alt="loudspeaker" />
@@ -53,7 +59,7 @@ const Index = () => {
           <img src="/assets/images/user/bitcoin.png" className=''alt="bitcoin" />
           <p className='text-lg md:text-xl '>3 BidCoins Left</p>
         </div>
-        <div className="rounded-xl shadow-stepShadow">
+        <div className="rounded-xl mb-2 shadow-stepShadow">
           <button 
             className={`px-4 md:px-7 text-base md:text-lg  md:leading-7 font-medium shadow-Shadow2 py-[9px] md:py-4 
               text-white
@@ -65,7 +71,59 @@ const Index = () => {
 
     </div>
 </div>
-<img className='md:w-1/2' src="/assets/images/user/user.svg" alt="user" />
+<div className='md:w-1/2 w-full user relative overflow-hidden'>
+
+
+<Swiper
+            pagination={{
+              clickable: true,
+            }}
+            slidesPerView={1}
+            mousewheel={true}
+            spaceBetween={16}
+            infinite={true}
+            loop={true}
+            navigation={{
+              nextEl: '.user-swiper-button-next',
+              prevEl: '.user-swiper-button-prev',
+            }}
+          
+          >
+             {
+              slides?.map((a,i)=>{
+          return <SwiperSlide key={i+ Math.random()} className="w-full transition-all duration-300 ease-in-out">
+<img className='w-full md:h-auto h-[339px]' src="/assets/images/user/user.svg" alt="user" />
+            
+          </SwiperSlide>
+              })
+             }  
+            </Swiper>
+<div className='w-full flex justify-center'>
+<div className='max-w-[85px] flex mt-2 mb-2 w-full  justify-between items-center gap-3'>
+<div className="user-swiper-button-prev w-[30px] z-30 h-[30px]   shadow-stepShadow rounded-full">
+            <button className="flex items-center justify-center shadow-Shadow2 w-[30px] h-[30px] rounded-full ">
+              <svg width={7} height={12} viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.68671 1.50001L1.01971 6.16601L5.68671 10.833" stroke="#FFA31A" strokeWidth={2} strokeMiterlimit={10} strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+
+
+            </button>
+          </div>
+            <div className="user-swiper-button-next w-[30px] z-30 h-[30px]  shadow-stepShadow rounded-full">
+            <button className="flex justify-center items-center shadow-Shadow2 w-[30px] h-[30px] rounded-full ">
+              <svg width={8} height={12} viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.68671 1.50001L6.35371 6.16601L1.68671 10.833" stroke="#FFA31A" strokeWidth={2} strokeMiterlimit={10} strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+
+
+            </button>
+          </div>
+          
+
+            </div>
+</div>
+            
+            </div>
 
    </div>
   <div className='w-full mt-10 md:mt-14 lg:mt-16 xl:mt-20 max-w-[1400px] flex items-center justify-between gap-5 md:flex-row flex-col px-4 md:px-6'>
@@ -284,7 +342,10 @@ Sed pretium dolor etiam.</p>
       </div>
 
       {/* slider */}
+      <div className="overflow-hidden flex w-full justify-center relative">
+
      <Slider/>
+      </div>
       <FAQs />
       <div className='w-full flex justify-center max'>
 

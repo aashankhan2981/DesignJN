@@ -74,12 +74,7 @@ const Deal = ({sale, title, description, updateDesign, id, topheading,amount,ava
             />}
           </div>
           <div className="flex items-center sm:items-start w-full sm:w-auto flex-col">
-            {topheading && (
-              <div className="w-full mb-2 max-w-[170px] text-[#745FEA] text-sm leading-5 flex item-center justify-between">
-                <p>Site logo</p>
-                <p>Site name</p>
-              </div>
-            )}
+         
             <p className="text-base lg:text-left text-center md:text-lg md:leading-[25px] mb-[10px]  max-w-[281px] text-white">
               {description
                 ? description
