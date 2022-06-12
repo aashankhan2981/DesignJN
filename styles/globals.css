@@ -343,6 +343,10 @@ opacity: 0;
   border: 0.15em solid #FFA31A;
 
 }
+.arrow{
+  background: url('../public//assets/images/requirements/arrow.svg');
+ 
+}
 
 .custom-scroll::-webkit-scrollbar {
   width: 7px;

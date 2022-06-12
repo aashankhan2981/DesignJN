@@ -1,14 +1,32 @@
-import React,{useState} from 'react'
+import React,{useRef, useState} from 'react'
+import DropDown from '../components/DropDown'
 import Card from '../components/Requirement/Card'
 import ServiceFoot from '../components/Requirement/ServiceFoot'
 import Steps from '../data/ReqDetailSteps.json'
 const Index = () => {
     const [ActiveStep,setActive] = useState(1)
+    const progress1 = Array.from({ length: 100 }, (_, idx) => `${++idx}`)
+    const progress2 = Array.from({ length: 50 }, (_, idx) => `${++idx}`)
+
+    
   const [slider,setSlider] = useState(100)
+  const [table,setTable] = useState(true)
+  const categories = [
+    { value: "0", content: "- Select Status -" },
+    { value: "1", content: "Status1" },
+    { value: "2", content: "Status2" },
+    { value: "3", content: "Status3" },
+    
+  ];
+  const inputRef = useRef(null)
+  const fileHandler = (e)=>{
+    inputRef.current.click()
+
+  }
 
    return (
     <div className='flex flex-col items-center w-full'>
-    <div className="max-w-[1291px] mb-[200px] overflow-x-hidden  mt-[70px] md:mt-[86px] lg:px-10 md:px-6 px-4 w-full ">
+    <div className="max-w-[1291px] overflow-x-hidden mb-[200px]   mt-[70px] md:mt-[86px] lg:px-10 md:px-6 px-4 w-full ">
   <p className="font-bold xl:text-[55px]  text-center md:text-3xl text-xl  sm:text-2xl  lg:text-4xl xl:leading-[65px]  text-white">
   Requirement Details
       </p>
@@ -295,7 +313,7 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
 </>
 :ActiveStep==4?
 <>
-<div className='flex mt-9 md:mt-12 lg:mt-14 sm:flex-nowrap flex-wrap  gap-5  w-full justify-between items-start text-base sm:text-lg md:text-xl xl:text-2xl text-white xl:leading-6'>
+<div className='flex mt-9  md:mt-12 lg:mt-14 sm:flex-nowrap flex-wrap  gap-5  w-full justify-between items-start text-base sm:text-lg md:text-xl xl:text-2xl text-white xl:leading-6'>
         <div className='flex sm:w-1/2 items-start   gap-5 md:gap-6 xl:gap-10 '>
             <p>ID#123</p>
             <p>Category/ Subcategory</p>
@@ -308,7 +326,7 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
             <p>Seller 2</p>
         </div>
         <div className='mt-6  border-t pt-6 border-t-[#808080]'>
-            <div className='flex justify-between w-full items-start'>
+            <div className='flex justify-between sm:flex-row flex-col w-full items-start'>
                 <div className='max-w-[303px] flex justify-between items-center gap-4 w-full'>
                 <div>
                     <p className="text-sm md:text-base md:leading-5 text-light_text">Order No</p>
@@ -322,7 +340,7 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
                 <p className='text-lg md:text-xl md:leading-6 text-[#F10000]'>Raise a dispute</p>
 
             </div>
-            <div className='mt-20  md:mt-24 flex justify-between w-full5 lg:mt-28'>
+            <div className='mt-20  md:mt-24 flex justify-between w-full sm:flex-row flex-col lg:mt-28'>
                 <div className='flex gap-4 md:gap-5 items-center'>
                     <div className='relative w-20 flex items-center justify-center  h-20 rounded-full border border-site_yellow'>
                    <svg className='absolute bottom-0 right-0' xmlns="http://www.w3.org/2000/svg" width={18} height={18} viewBox="0 0 18 18">
@@ -347,14 +365,14 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
                     </div>
 
                 </div>
-                <div >
+                <div className='flex flex-col items-end' >
                 <div className="flex mb-[10px] mt-[5px] gap-2">
                 <img src="/assets/images/landing/stars.svg" alt="profile" />
                 <p className="text-[11px] md:leading-5 text-light_text">
                   (55 Reviews)
                 </p>
               </div>
-              <div className='flex  items-center sm:w-auto w-full justify-between gap-4'>
+              <div className='flex  items-center sm:w-auto w-full max-w-[204px] justify-between gap-4'>
                  <div className='flex   gap-[6px] items-center'>
 
        <svg xmlns="http://www.w3.org/2000/svg" width="16.607" height="16.607" viewBox="0 0 16.607 16.607">
@@ -386,7 +404,7 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
             </div>
 
         </div>
-        <div className='mt-10 justify-between gap-5  md:mt-14 lg:mt-16 xl:mt-[70px]  flex items-center '>
+        <div className='mt-10 justify-between gap-5 sm:flex-row flex-col  md:mt-14 lg:mt-16 xl:mt-[70px]  flex items-center '>
         <div className='2xl:max-w-[948px]  gap-4 md:gap-6 lg:gap-8 xl:gap-10 px-6 md:px-7   md:w-2/3 2xl:w-full flex items-center py-5 product-shadow rounded-xl'>
 
  <input type="text" className='text-base bg-transparent md:text-lg outline-none md:leading-[18px] text-light_text w-full' placeholder='Type to break the ice' />
@@ -410,21 +428,21 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
         </button>
     </div>
         </div>
-        <div className='mt-10 justify-between max-w-[503px] gap-5  md:mt-14 lg:mt-16 xl:mt-[70px]  flex items-end '>
+        <div className='mt-10 justify-between max-w-[503px] gap-5 sm:flex-nowrap flex-wrap  md:mt-14 lg:mt-16 xl:mt-[70px]  flex items-end '>
             <div>
-                <p className='text-base md:text-lg md:leaidng-6 text-light_text'>Original value</p>
-                <p className='text-xl md:text-2xl lg:text-[28px] text-white leading-7'>₹ 800</p>
+                <p className='text-sm sm:text-base md:text-lg md:leaidng-6 text-light_text'>Original value</p>
+                <p className='text-base sm:text-xl md:text-2xl lg:text-[28px] text-white leading-7'>₹ 800</p>
             </div>
             <div>
-                <p className='text-base md:text-lg md:leaidng-6 text-light_text'>Seller’s bid</p>
-                <p className='text-xl md:text-2xl lg:text-[28px] text-white leading-7'>₹ 600</p>
+                <p className='text-sm sm:text-base md:text-lg md:leaidng-6 text-light_text'>Seller’s bid</p>
+                <p className='text-base sm:text-xl md:text-2xl lg:text-[28px] text-white leading-7'>₹ 600</p>
             </div>
-            <p className='text-base md:text-lg md:leaidng-6 text-light_text'>In <span className='text-xl md:text-2xl lg:text-[28px] text-white leading-7'>4</span> milestones</p>
+            <p className='text-sm sm:text-base md:text-lg md:leaidng-6 text-light_text'>In <span className='text-xl md:text-2xl lg:text-[28px] text-white leading-7'>4</span> milestones</p>
             </div>
             <div className='mt-10 justify-between max-w-[840px] gap-5  md:mt-14 lg:mt-16 xl:mt-[70px]  flex items-end '>
               <div>
-                <p className='text-base mb-[5px] md:text-lg md:leaidng-6 text-light_text'>Delivery time</p>
-                <p className='max-w-[166px] inline-flex gap-3 text-base mb-[5px] md:text-lg md:leaidng-6 text-white'>
+                <p className='text-sm sm:text-base mb-[5px] md:text-lg md:leaidng-6 text-light_text'>Delivery time</p>
+                <p className='max-w-[166px] inline-flex gap-3 text-sm sm:text-base mb-[5px] md:text-lg md:leaidng-6 text-white'>
                 <span>DD</span>   <span>:</span>    <span>HH</span>   <span>:</span> <span>MM</span>
 
                 </p>
@@ -432,8 +450,8 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
                 
               </div>
               <div>
-                <p className='text-base mb-[5px] md:text-lg md:leaidng-6 text-light_text'>Extras</p>
-                <p className='max-w-[260px] inline-flex gap-3 text-base mb-[5px] md:text-lg md:leaidng-6 text-white'>
+                <p className='text-sm sm:text-base mb-[5px] md:text-lg md:leaidng-6 text-light_text'>Extras</p>
+                <p className='max-w-[260px] inline-flex gap-3 text-sm sm:text-base mb-[5px] md:text-lg md:leaidng-6 text-white'>
                 Free invoice,  Urgent delivery 
 
                 </p>
@@ -445,45 +463,52 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
             </div>
             <div className='mt-10 md:mt-12 lg:mt-14 rounded-md w-full shadow-stepShadow'>
                 <div className='flex px-6 lg:px-8 xl:px-10 flex-col items-center shadow-Shadow2 pt-10 md:pt-12 lg:pt-14  rounded-md'>
-                       <div className='flex text-center text-xl md:text-2xl lg:text-[28px] text-white leading-7 justify-between items-center max-w-[815px] w-full'>
+                       <div className='flex  text-center text-lg sm:flex-nowrap flex-wrap sm:text-xl md:text-2xl gap-4 lg:text-[28px] text-white leading-7 justify-between items-center max-w-[815px] w-full'>
 
-                         <div className='flex flex-col items-center'>
+                         <div className='flex flex-col gap-1 items-center'>
                             <p className='text-light_text'>Budget</p>
                             <p>₹ 600</p>
                          </div>
-                         <div className='flex flex-col items-center'>
+                         <div className='flex flex-col  gap-1 items-center'>
                             <p className='text-light_text'>Paid milestone</p>
                             <p>₹ 150</p>
                          </div>
-                         <div className='flex flex-col items-center'>
+                         <div className='flex flex-col gap-1 items-center'>
                             <p className='text-light_text'>Remaining milestone</p>
                             <p>₹ 450</p>
                          </div>
                        </div>
-                       <div className='w-full mt-10 md:mt-14 lg:mt-16 xl:mt-[70px]  flex justify-between items-center'>
-                        <p className='text-white text-lg md:text-xl md:leading-6 '>Milestone(s) : 4</p>
-                        <div className='shadow-stepShadow max-w-[451px] w-full'>
-                            <button className='shadow-Shadow2 w-full flex items-center justify-center px-4 py-[9px] md:py-3 lg:py-4 xl:py-5 text-white text-base md:text-lg md:leading-6'>+Add or Edit milestone
+                       <div className='w-full mt-10 md:mt-14 lg:mt-16 xl:mt-[70px] gap-4 fsm:flex-row flex-col flex justify-between items-center'>
+                        <p className='text-white text-base sm:text-lg md:text-xl md:leading-6 '>Milestone(s) : 4</p>
+                        <div className='shadow-stepShadow  fsm:max-w-[200px] sm:max-w-[300px] md:max-w-[451px] w-full'>
+                            <button className='shadow-Shadow2 w-full flex items-center justify-center px-4 py-[9px] md:py-3 lg:py-4 xl:py-5 text-white text-sm sm:text-base md:text-lg md:leading-6'>+Add or Edit milestone
 
                             </button>
                         </div>
                        </div>
-                       <div className='w-full mt-10 text-lg md:text-xl md:leading-5 md:mt-14 lg:mt-16 xl:mt-[70px]  flex gap-5 md:gap-6 items-start'>
+                       <div className='w-full mt-10 text-sm fsm:text-base sm:text-lg md:text-xl md:leading-5 md:mt-14 lg:mt-16 xl:mt-[70px]  flex gap-5 md:gap-6 items-start'>
                          
                         <p className='text-site_yellow  '>1.</p>
-                        <div className='flex flex-col  gap-8 w-full'>
+                        <div className='flex flex-col overflow-x-hidden gap-8 w-full'>
 
                         <p  className='max-w-[736px] text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium dolor etiam elementum. <span className='text-site_yellow'>More</span></p>
-                        <div className='flex justify-between items-center w-full'>
-                            <p className='text-white text-2xl md:text-3xl lg:text-[40px] font-semibold md:font-bold'>₹ 150</p>
-                            <p className='text-[#15D807] text-lg md:text-xl lg:text-2xl lg:leading-[35px] font-medium'>Completed</p>
+                        <div className='flex sm:flex-nowrap flex-wrap gap-4 justify-between items-center w-full'>
+                            <p className='text-white text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-semibold md:font-bold'>₹ 150</p>
+                            <p className='text-[#15D807] text-base sm:text-lg md:text-xl lg:text-2xl lg:leading-[35px] font-medium'>Completed</p>
                             <button className='bg-[#FFA31A] md:py-4 2xl:py-5 py-3 text-base md:text-lg md:leading-7 text-white rounded-md px-5 md:px-7 xl:px-8 flex items-center gap-1 '>
                             Verify & Pay
           </button>
                         </div>
                         <div className='shadow-stepShadow h-5 w-full rounded-xl max-w-[992px]'>
                         <div className='h-5 rounded-xl shadow-Shadow2 w-full '>
-                            <img src="/assets/images/requirements/progressBar.svg" className='h-5' alt="Progress" />
+                            <div className='relative w-full flex gap-1 bg-site_yellow h-5 rounded-full overflow-hidden'>
+
+                       {progress1?.map(()=>{
+                        return    <img key={Math.random()+"progress"} src="/assets/images/requirements/progressBar.svg" className='h-5  ' alt="Progress" />
+                       
+                    })   } 
+
+                            </div>
 
 </div>
                         </div>
@@ -493,22 +518,27 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
                         </div>
 
 
-                        <div className='w-full mt-10 text-lg md:text-xl md:leading-5 md:mt-14 lg:mt-16 xl:mt-[70px]  flex gap-5 md:gap-6 items-start'>
+                        <div className='w-full mt-10 text-sm fsm:text-base sm:text-lg md:text-xl md:leading-5 md:mt-14 lg:mt-16 xl:mt-[70px]  flex gap-5 md:gap-6 items-start'>
                          
                          <p className='text-site_yellow  '>1.</p>
                          <div className='flex flex-col  gap-8 w-full'>
  
                          <p  className='max-w-[736px] text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium dolor etiam elementum. <span className='text-site_yellow'>More</span></p>
-                         <div className='flex justify-between items-center w-full'>
-                             <p className='text-white text-2xl md:text-3xl lg:text-[40px] font-semibold md:font-bold'>₹ 150</p>
-                             <p className='text-[#2DB4F8] text-lg md:text-xl lg:text-2xl lg:leading-[35px] font-medium'>InProcess</p>
+                         <div className='flex sm:flex-nowrap flex-wrap gap-4 justify-between items-center w-full'>
+                             <p className='text-white text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-semibold md:font-bold'>₹ 150</p>
+                             <p className='text-[#2DB4F8] text-base sm:text-lg md:text-xl lg:text-2xl lg:leading-[35px] font-medium'>InProcess</p>
                              <button className='bg-[#FFA31A] md:py-4 2xl:py-5 py-3 text-base md:text-lg md:leading-7 text-white rounded-md px-5 md:px-7 xl:px-8 flex items-center gap-1 '>
                              Action
            </button>
                          </div>
                          <div className='shadow-stepShadow h-5 w-full rounded-xl max-w-[992px]'>
-                         <div className='h-5 rounded-xl shadow-Shadow2 w-full '>
-                             <img src="/assets/images/requirements/progressBar2.svg" className='h-5' alt="Progress" />
+                         <div className='h-5 rounded-xl  shadow-Shadow2 w-full '>
+                             <div className='w-1/2 relative flex gap-1  overflow-hidden bg-site_yellow h-5 rounded-full'>
+                             {progress2?.map(()=>{
+                        return    <img  key={Math.random()+"progress2"} src="/assets/images/requirements/progressBar.svg" className='h-5  ' alt="Progress" />
+                       
+                    })   } 
+                             </div>
  
  </div>
                          </div>
@@ -516,10 +546,266 @@ adipiscing elit. Se pretium dolor etiam elementum. </p>
  
                          </div>
                          </div>
+                         <div className='w-full mt-10 mb-6 text-lg md:text-xl justify-between md:leading-5 md:mt-14 lg:mt-16 xl:mt-[70px]  flex lg:flex-row flex-col gap-5 md:gap-6 items-start lg:items-center'>
+                            <div className="flex sm:items-center sm:flex-row flex-col w-full justify-between gap-4 max-w-[700px]">
 
+                            <div className="max-w-[330px] w-full">
+
+                            <DropDown categories={categories} />
+                            </div>
+                            <div className='max-w-[330px] md:mt-2  gap-4 md:gap-5  px-6 md:px-7  w-full flex items-center py-3 md:py-4 product-shadow rounded-xl'>
+
+ <input type="text" className='text-base bg-transparent md:text-lg outline-none md:leading-[18px] text-light_text w-full' placeholder='Search by Username' />
+<svg onClick={fileHandler} xmlns="http://www.w3.org/2000/svg" width="17.179" height="19.646" viewBox="0 0 17.179 19.646">
+  <path id="Path_5434" data-name="Path 5434" d="M18.08,12.42,11.9,18.61a4.25,4.25,0,0,1-6-6l8-8a2.57,2.57,0,0,1,3.54,0,2.52,2.52,0,0,1,0,3.54l-6.9,6.89A.764.764,0,0,1,9.42,14l5.13-5.12a1,1,0,1,0-1.42-1.42L8,12.6a2.74,2.74,0,0,0,0,3.89,2.82,2.82,0,0,0,3.89,0l6.89-6.9a4.5,4.5,0,0,0-6.36-6.36l-8,8A6.25,6.25,0,0,0,13.31,20l6.19-6.18a1,1,0,1,0-1.42-1.42Z" transform="translate(-2.809 -2.022)" fill="#ffa31a" />
+</svg>
+<input type="file" name="" className='hidden' ref={inputRef} id="" />
+
+
+
+
+</div>
+
+                            </div>
+                            <div className='max-w-[140px] w-full shadow-stepShadow rounded-xl'>
+        <button className='rounded-xl  px-2 flex items-center justify-center w-full text-white shadow-Shadow2 py-3 md:py-4'>
+        Update
+
+
+        </button>
+    </div>
+
+                            
+</div>
                 </div>
 
+
+                
+
               </div>
+
+              <div className='w-full overflow-x-auto overflow-y-hidden  px-4 md:px-6 flex justify-center'>
+              <table className="sm:ml-56 ml-[500px] fsm:ml-96 md:ml-40 base:ml-20 lg:ml-0 lg:mx-5  whitespace-nowrap w-full shadow-Shadow2 rounded-xl max-w-[1108px] px-5 md:px-7 mt-10 mb-6 text-lg md:text-xl  md:leading-5 md:mt-14 lg:mt-16 xl:mt-[80px]">
+              <thead className='shadow-Shadow2'>
+                <tr align="center" className='text-lg md:text-xl md:leading-6 text-light_text'>
+                  
+                  <th
+                    align="left"
+                    className="py-6 px-6"
+                  >
+                   By
+                  </th>
+
+                  <th className=" text-left py-6 px-6">
+                  Status & message
+                  </th>
+                  <th className=" text-left py-6 px-6">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="17.179" height="19.646" viewBox="0 0 17.179 19.646">
+  <path id="Path_5435" data-name="Path 5435" d="M18.08,12.42,11.9,18.61a4.25,4.25,0,0,1-6-6l8-8a2.57,2.57,0,0,1,3.54,0,2.52,2.52,0,0,1,0,3.54l-6.9,6.89A.764.764,0,0,1,9.42,14l5.13-5.12a1,1,0,1,0-1.42-1.42L8,12.6a2.74,2.74,0,0,0,0,3.89,2.82,2.82,0,0,0,3.89,0l6.89-6.9a4.5,4.5,0,0,0-6.36-6.36l-8,8A6.25,6.25,0,0,0,13.31,20l6.19-6.18a1,1,0,1,0-1.42-1.42Z" transform="translate(-2.809 -2.022)" fill="gray" />
+</svg>
+
+
+                  </th>
+
+                  <th className=" text-left py-6 px-6">
+                  Action
+                  </th>
+                  <th className=" text-left py-6 px-6">
+                  Status history
+                  </th>
+                  <th className=" text-left py-6 px-6">
+                  <svg onClick={()=>{setTable(!table)}} className={`cursor-pointer ${table?'rotate-0':'rotate-180'} transition-all duration-500 ease-in`} xmlns="http://www.w3.org/2000/svg" width="14.829" height="8.414" viewBox="0 0 14.829 8.414">
+  <path id="Path_5436" data-name="Path 5436" d="M12,6,6,0,0,6" transform="translate(13.414 7.414) rotate(180)" fill="none" stroke="#ffa31a" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit={10} strokeWidth={2} />
+</svg>
+
+
+                  </th>
+                  
+
+              
+                </tr>
+              </thead>
+
+        
+                    <tr
+                      onClick={() => {
+                      }}
+                      className={`${table?" ":'hidden'}  transition-all duration-500 ease-in-out cursor-pointer text-base md:text-lg md:leading-6 text-light_text`}
+                    >
+                     
+                      <td className=" text-left py-7  px-6">
+                      <div>
+                        <p className='text-xl md:text-2xl text-white md:leading-6'>Seller</p>
+                        <p>15 min ago</p>
+                      </div>
+                      </td>
+
+                      <td className=" text-left py-7  px-6">
+                      <div>
+                        <p className='text-xl md:text-2xl text-white md:leading-6'>Missing info</p>
+                        <p>Tell operator name?</p>
+                      </div>
+                      </td>
+                      <td className=" text-left py-7  px-6">
+                      <div>
+                        <p className='text-xl md:text-2xl text-white md:leading-6 invisible'>Invisible</p>
+                        <div className='flex gap-2 md:gap-[10px] items-center '>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20.8" height={26} viewBox="0 0 20.8 26">
+  <path id="Path_5437" data-name="Path 5437" d="M10.5,12.4h1.3a1.3,1.3,0,0,0,0-2.6H10.5a1.3,1.3,0,1,0,0,2.6Zm0,2.6a1.3,1.3,0,1,0,0,2.6h7.8a1.3,1.3,0,1,0,0-2.6Zm14.3-3.978a1.7,1.7,0,0,0-.078-.351v-.117a1.391,1.391,0,0,0-.247-.364h0l-7.8-7.8h0a1.391,1.391,0,0,0-.364-.247.416.416,0,0,0-.117,0A1.144,1.144,0,0,0,15.765,2H7.9A3.9,3.9,0,0,0,4,5.9V24.1A3.9,3.9,0,0,0,7.9,28h13a3.9,3.9,0,0,0,3.9-3.9V11.022ZM17,6.433,20.367,9.8H18.3A1.3,1.3,0,0,1,17,8.5ZM22.2,24.1a1.3,1.3,0,0,1-1.3,1.3H7.9a1.3,1.3,0,0,1-1.3-1.3V5.9A1.3,1.3,0,0,1,7.9,4.6h6.5V8.5a3.9,3.9,0,0,0,3.9,3.9h3.9Zm-3.9-3.9H10.5a1.3,1.3,0,1,0,0,2.6h7.8a1.3,1.3,0,1,0,0-2.6Z" transform="translate(-4 -2)" fill="#745fea" />
+</svg>
+<p>Receipt.pdf</p>
+
+
+
+
+                        </div>
+                      </div>
+                      </td>
+                      <td className=" text-left py-7 px-6">
+                      <div>
+                        <p className='text-xl md:text-2xl text-white md:leading-6 invisible'>Invisible</p>
+                        <div className='flex gap-4  md:gap-6 items-center '>
+                       <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
+  <g id="Group_548" data-name="Group 548" transform="translate(-949 -3074)">
+    <g id="Group_546" data-name="Group 546" transform="translate(285 1722.5)">
+      <path id="Path_5439" data-name="Path 5439" d="M2039.011,562.333l-8.758-8.083" transform="translate(-1358.253 805.25)" fill="none" stroke="red" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+      <path id="Path_5440" data-name="Path 5440" d="M2030.253,562.333l8.758-8.083" transform="translate(-1358.253 805.25)" fill="none" stroke="red" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+    </g>
+    <g id="Ellipse_392" data-name="Ellipse 392" transform="translate(949 3074)" fill="none" stroke="red" strokeWidth={1}>
+      <circle cx={12} cy={12} r={12} stroke="none" />
+      <circle cx={12} cy={12} r="11.5" fill="none" />
+    </g>
+  </g>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width={23} height={23} viewBox="0 0 23 23">
+  <g id="Group_547" data-name="Group 547" transform="translate(-1127 -3083)">
+    <path id="Path_5438" data-name="Path 5438" d="M2026.75,557.213l2.853,3.621,7.132-6.583" transform="translate(-893.25 2536.25)" fill="none" stroke="#15d807" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
+    <g id="Ellipse_393" data-name="Ellipse 393" transform="translate(1127 3083)" fill="none" stroke="#15d807" strokeWidth={1}>
+      <circle cx="11.5" cy="11.5" r="11.5" stroke="none" />
+      <circle cx="11.5" cy="11.5" r={11} fill="none" />
+    </g>
+  </g>
+</svg>
+
+
+
+                        </div>
+                      </div>
+                      </td>
+                      <td className="text-sm leading-none text-slate-600 text-left py-7 font-medium px-6">
+                      <div className='max-w-[222px]  gap-4 px-4 md:px-6   w-full flex items-center py-3 md:py-4 xl:py-5 product-shadow rounded-xl'>
+
+<input type="text" className='text-base bg-transparent md:text-lg outline-none md:leading-[18px] text-light_text w-full' placeholder='Reply' />
+
+<svg id="Group_529" data-name="Group 529" xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
+ <path id="Path_5431" data-name="Path 5431" d="M0,0H24V24H0Z" fill="none" />
+ <path id="Path_5432" data-name="Path 5432" d="M3.4,20.4l17.45-7.48a1,1,0,0,0,0-1.84L3.4,3.6a.993.993,0,0,0-1.39.91L2,9.12a.994.994,0,0,0,.87.99L17,12,2.87,13.88a1.012,1.012,0,0,0-.87,1l.01,4.61A.993.993,0,0,0,3.4,20.4Z" fill="#ffa31a" />
+</svg>
+</div>
+                      </td>
+
+     
+                    </tr>
+                  
+            </table>
+
+</div>
+<div className='mt-20 md:mt-24 lg:mt-[101px] w-full '>
+    <div  className= 'max-w-[400px] sm:max-w-[504px] relative flex justify-center items-center'>
+        <img src="/assets/images/requirements/arrow.svg" className='py-6 sm:py-10' alt="" />
+        <p className='text-base sm:text-lg md:text-xl absolute m-auto lg:text-2xl lg:leading-6 text-white '>Shared media, Links & Docs (6)</p>
+         
+    </div>
+
+</div>
+<div className='  flex justify-center    w-full '>
+        <img src="/assets/images/requirements/reqbackground.svg" className='w-full object-contain object-center' alt="req background" />
+</div>
+<div className='md:mt-14 lg:mt-16 xl:mt-[70px] mt-10 w-full '>
+    <div  className='max-w-[224px] relative flex justify-center items-center'>
+        <img src="/assets/images/requirements/arrow2.svg" className='py-6 max-h-[150px] sm:max-h-max sm:py-10' alt="" />
+        <p className='text-base sm:text-lg md:text-xl absolute m-auto lg:text-2xl lg:leading-6 text-white '>Reviews</p>
+         
+    </div>
+
+</div>
+    <div className='grid mt-6  md:mt-8 lg:mt-10 grid-cols-1 md:grid-cols-2 w-full gap-5'>
+<div className=' shadow-stepShadow rounded-xl max-w-[535px] w-full'>
+    <div className='h-full shadow-Shadow2 px-5 sm:px-7 md:px-[30px] pt-5 sm:pt-7 md:pt-[30px] pb-10 sm:pb-14 md:pb-16 w-full rounded-xl'>
+    <div className="flex gap-4 items-center">
+            <div className="h-[59px] w-[59px] rounded-full">
+              <img src="/assets/images/landing/profile.svg" alt="profile" />
+            </div>
+            <div>
+              <p className="font-medium text-base md:text-lg md:leading-5 text-white">
+              Your Name
+              </p>
+              <div className="flex mt-[5px] ">
+                <img src="/assets/images/landing/stars.svg" alt="profile" />
+        
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full max-w-[440px] mt-3 ">
+            <img src="/assets/images/requirements/commastart.svg" alt="" />
+            <p className="text-sm lg:text-base pl-4 xl:text-xl text-light_text xl:leading-[25px] text-center md:text-left">
+              Lorem ipsum sit , cons ecte tur adipiscing elisit amet anteac nu
+              nc mattis ulquis sed turpis. Phasellus vitatus erat Namvitae porta
+              . Donec at tellus est
+            </p>
+            <div className="w-full flex justify-end">
+              <img src="/assets/images/requirements/commaend.svg" alt="" />
+            </div>
+          </div>
+
+    </div>
+
+ 
+    </div>
+
+    <div className=' shadow-stepShadow rounded-xl max-w-[535px] w-full'>
+    <div className='shadow-Shadow2 h-full px-5 sm:px-7 md:px-[30px] pt-5 sm:pt-7 md:pt-[30px] pb-10 sm:pb-14 md:pb-16 w-full rounded-xl'>
+    <div className="flex gap-4 items-center">
+            <div className="h-[59px] w-[59px] rounded-full">
+              <img src="/assets/images/landing/profile.svg" alt="profile" />
+            </div>
+            <div>
+              <p className="font-medium text-base md:text-lg md:leading-5 text-white">
+              Seller's Name
+              </p>
+              <div className="flex mt-[5px] ">
+                <img src="/assets/images/landing/stars.svg" alt="profile" />
+        
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full max-w-[440px] mt-3 ">
+            <img src="/assets/images/requirements/commastart.svg" alt="" />
+            <p className="text-sm lg:text-base pl-4 xl:text-xl text-light_text xl:leading-[25px] text-center md:text-left">
+              Lorem ipsum sit , cons ecte tur adipiscing elisit amet anteac nu
+              nc mattis ulquis sed turpis. Phasellus vitatus erat Namvitae porta
+              . Donec at tellus est
+            </p>
+            <div className="w-full flex justify-end">
+              <img src="/assets/images/requirements/commaend.svg" alt="" />
+            </div>
+          </div>
+          <div className='flex mt-7 md:mt-8 gap-3 md:gap-4 items-center '>
+          <input name="default" type="radio" className="radio appearance-none  text-[#FFA31A] " />
+          <p className='text-sm md:text-base text-light_text md:leading-6'>Set As Featured Review On Your  <span className='text-site_yellow'>Deals Jn.</span>  Profile</p>
+
+             
+          </div>
+
+    </div>
+
+ 
+    </div>
+  
+
+</div>
 
     </div>
 

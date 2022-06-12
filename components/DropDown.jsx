@@ -21,7 +21,7 @@ const DropDown = ({categories}) => {
          
         setToggle(!toggle);
       }}
-      className={` shadow-Shadow2 cursor-pointer flex justify-between items-center  ${toggle?'':'rounded-b-xl'} rounded-t-xl w-full py-5 px-7`}
+      className={` shadow-Shadow2 cursor-pointer gap-4 flex justify-between items-center  ${toggle?'':'rounded-b-xl'} rounded-t-xl w-full py-5 px-7`}
     >
     <p className="text-[15px] leading-[18px] text-light_text">{active.content}</p>
 

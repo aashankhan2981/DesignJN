@@ -10,10 +10,12 @@ module.exports = {
   theme: {
     screens: {
       'xsm': '400px',
+      'fsm': '500px',
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
 
       'md': '768px',
+      'base': '900px',
       // => @media (min-width: 768px) { ... }
 
       'lg': '1024px',
