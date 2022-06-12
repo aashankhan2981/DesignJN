@@ -1,0 +1,76 @@
+[
+    {
+    "heading"   :"Mobile Recharge",
+    "id":"ID 435 ",
+    "img":"/assets/images/landing/deal1.svg"
+,
+    "title":"Need Prepaid Mobile Recharge Of Airtel 3 Month Plan ",
+    "price":"₹ 500",
+    "Urgent":true,
+    "Available":"Now",
+    "off":"5% OFF",
+    "new":"02",
+    "inProgress":"01",
+    "bid":{"heading":"Bid:", "quantity": "6","heading2":"Average bid:","quantity2":"₹600"},
+    "action":"Place bid",
+    "time":"5 Min Ago"
+},
+{
+    "heading"   :"Flight Tickets",
+    "id":"ID 435 ",
+    "img":"/assets/images/landing/deal1.svg"
+
+,
+    "title":"Doing Domestic Flights Booking at 500₹ off",
+    "price":"₹ 500",
+    "Urgent":true,
+    "Available":"Now",
+    "off":"5% OFF",
+    "new":"02",
+    "inProgress":"01",
+    "bid":{"heading":"Bid:", "quantity": "6","heading2":"Average bid:","quantity2":"₹600"},
+
+    "action":"Place bid",
+    "time":"5 Min Ago"
+
+},
+{
+    "heading"   :"Electronics",
+    "id":"ID 435 ",
+    "img":"/assets/images/user/cart.svg"
+,
+
+    "BelowImage":"Offers (2) :   HDFC Cards + PhonePe Coupon",
+    "title":"Product (2) :   Need An Redmi 8 4/64gb Mobile From Flipkart",
+    "price":"₹ 500",
+    "Urgent":true,
+    "Available":"Now",
+    "off":"5% OFF",
+    "new":"02",
+    "bid":{"heading":"Invest:", "quantity": "7","heading2":"Profit:","quantity2":"₹600"},
+    "action":"Claim",
+
+    "inProgress":"01"
+    
+},
+{
+    "heading"   :"Electronics",
+    "id":"ID 435 ",
+    "img":"/assets/images/user/cart.svg"
+
+,
+"BelowImage":"Offers (2) : HDFC Cards + PhonePe Coupon",
+"action":"Place bid",
+
+
+    "title":"Product (2) :   Need An Redmi 8 4/64gb Mobile From Flipkart",
+    "bid":"Be first to bid",
+
+    "price":"₹ 500",
+    "Urgent":true,
+    "Available":"Now",
+    "off":"5% OFF",
+    "new":"02",
+    "inProgress":"01"
+
+}]
